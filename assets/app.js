@@ -1,6 +1,28 @@
 (function () {
   var C = window.YBL || {};
 
+  // ---------- Meta Pixel (el código base está en el <head>) ----------
+  var page = document.body.hasAttribute("data-gated") ? "clase" : "ventas";
+  var value = parseFloat(String(C.PRICE || "").replace(/[^\d.]/g, "")) || 0;
+  var product = { content_name: "Your Best Look", content_category: page, value: value, currency: "USD" };
+  function track(ev, data, custom) {
+    if (typeof window.fbq !== "function") return;
+    window.fbq(custom ? "trackCustom" : "track", ev, data || {});
+  }
+  track("ViewContent", product);
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest && e.target.closest("[data-checkout]");
+    if (a) track("InitiateCheckout", product);
+  });
+
+  // Hasta dónde bajan en la página (50 % y 90 %), una vez por visita.
+  var depths = [50, 90];
+  window.addEventListener("scroll", function () {
+    var max = document.documentElement.scrollHeight - window.innerHeight;
+    var pct = max > 0 ? (window.scrollY / max) * 100 : 100;
+    while (depths.length && pct >= depths[0]) track("ScrollDepth", { percent: depths.shift(), page: page }, true);
+  }, { passive: true });
+
   // Todos los botones de compra apuntan a Hotmart; se conservan los UTM de la visita.
   var qs = window.location.search.replace(/^\?/, "");
   document.querySelectorAll("[data-checkout]").forEach(function (a) {
@@ -23,6 +45,7 @@
   var KEY = "ybl_revealed";
 
   function reveal() {
+    if (!document.body.classList.contains("is-revealed")) track("OfferShown", product, true);
     document.body.classList.add("is-revealed");
     try { localStorage.setItem(KEY, "1"); } catch (e) {}
   }
@@ -52,6 +75,15 @@
       v.playsInline = true;
       v.preload = "metadata";
       box.appendChild(v);
+      var played = false, marks = [25, 50, 75, 95];
+      v.addEventListener("play", function () {
+        if (!played) { played = true; track("VideoPlay", { page: page }, true); }
+      });
+      v.addEventListener("timeupdate", function () {
+        if (!v.duration) return;
+        var pct = (v.currentTime / v.duration) * 100;
+        while (marks.length && pct >= marks[0]) track("VideoProgress", { percent: marks.shift(), page: page }, true);
+      });
       if (gated) {
         v.addEventListener("timeupdate", function () { if (v.currentTime >= revealAt) reveal(); });
         v.addEventListener("ended", reveal);
@@ -63,6 +95,7 @@
       cover.className = "video-ph video-ph--cover";
       cover.innerHTML = '<span class="video-ph__play" aria-hidden="true"></span><p>Ver el video</p>';
       cover.onclick = function () {
+        track("VideoPlay", { page: page }, true);
         var f = document.createElement("iframe");
         f.src = src + (src.indexOf("?") > -1 ? "&" : "?") + "autoplay=1&playsinline=1&rel=0";
         f.allow = "autoplay; fullscreen; picture-in-picture";
