@@ -89,23 +89,56 @@
         v.addEventListener("ended", reveal);
       }
     } else {
-      // YouTube / Vimeo: mostramos una portada y el botón aparece por tiempo desde el play.
+      // YouTube / Vimeo: portada con play; al tocarla carga el reproductor con sonido.
+      var vimeo = /vimeo\.com/.test(src);
       var cover = document.createElement("button");
       cover.type = "button";
       cover.className = "video-ph video-ph--cover";
-      cover.innerHTML = '<span class="video-ph__play" aria-hidden="true"></span><p>Ver el video</p>';
+      cover.innerHTML = '<span class="video-ph__play" aria-hidden="true"></span><p>Ver la clase</p>';
+      if (C.VIDEO_POSTER) {
+        cover.style.background = "linear-gradient(180deg,rgba(20,10,18,0) 45%,rgba(20,10,18,.8)),url('" + C.VIDEO_POSTER + "') center 30%/cover";
+      }
       cover.onclick = function () {
         track("VideoPlay", { page: page }, true);
         var f = document.createElement("iframe");
         f.src = src + (src.indexOf("?") > -1 ? "&" : "?") + "autoplay=1&playsinline=1&rel=0";
-        f.allow = "autoplay; fullscreen; picture-in-picture";
+        f.allow = "autoplay; fullscreen; picture-in-picture; encrypted-media";
         f.allowFullscreen = true;
+        f.title = "La clase de Luzma";
         box.innerHTML = "";
         box.appendChild(f);
-        if (gated) setTimeout(reveal, revealAt * 1000);
+        if (vimeo) watchVimeo(f);
+        else if (gated) setTimeout(reveal, revealAt * 1000);
       };
       box.appendChild(cover);
     }
+    // Modo prueba (?preview=1): botón para ver la oferta sin esperar al minuto del video.
+    if (src && gated && /[?&]preview=1/.test(window.location.search)) {
+      var pb = document.createElement("button");
+      pb.className = "link-btn";
+      pb.type = "button";
+      pb.textContent = "Vista previa: mostrar botón";
+      pb.onclick = reveal;
+      box.parentNode.insertBefore(pb, box.nextSibling);
+    }
+  }
+
+  // Con la API de Vimeo sabemos el segundo exacto: el botón aparece en REVEAL_AT o al terminar.
+  function watchVimeo(f) {
+    function hook() {
+      var p = new window.Vimeo.Player(f), marks = [25, 50, 75, 95];
+      p.on("timeupdate", function (d) {
+        while (marks.length && d.percent * 100 >= marks[0]) track("VideoProgress", { percent: marks.shift(), page: page }, true);
+        if (gated && d.seconds >= revealAt) reveal();
+      });
+      p.on("ended", function () { if (gated) reveal(); });
+    }
+    if (window.Vimeo && window.Vimeo.Player) return hook();
+    var sc = document.createElement("script");
+    sc.src = "https://player.vimeo.com/api/player.js";
+    sc.onload = hook;
+    sc.onerror = function () { if (gated) setTimeout(reveal, revealAt * 1000); };
+    document.head.appendChild(sc);
   }
 
   // ---------- Barra fija en móvil (página de ventas) ----------
