@@ -25,8 +25,7 @@ fbq('track', 'PageView');
 <meta name="theme-color" content="#2a1628">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="assets/img/look-rosa.jpg">
-<link rel="stylesheet" href="assets/ybl.css?v=1">
+<link rel="stylesheet" href="assets/ybl.css?v=2">
 </head>
 <body class="sales">
 
@@ -39,65 +38,46 @@ fbq('track', 'PageView');
   </div>
 </div>
 
-<!-- HERO -->
-<header class="hero">
-  <div class="wrap hero__grid">
-    <div class="hero__copy">
-      <a class="brand" href="#" aria-label="Your Best Look by Luzma"><img src="assets/logo.png" alt="" width="64" height="64"><span>Your Best Look <em>by Luzma</em></span></a>
+<!-- HERO: el clóset -->
+<header class="stage">
+  <div class="wardrobe" aria-hidden="true">
+    <div class="rail rail--back" data-closet data-count="12" data-offset="5"></div>
+    <div class="rail rail--front" data-closet data-count="11"></div>
+    <div class="stage__light"></div>
+  </div>
+
+  <nav class="stage__nav wrap">
+    <a class="brand" href="#" aria-label="Your Best Look by Luzma"><img src="assets/logo.png" alt="" width="48" height="48"><span>Your Best Look <em>by Luzma</em></span></a>
+    <a class="stage__navcta" href="#inscribete">Inscríbete · <span data-price>$80 USD</span></a>
+  </nav>
+
+  <div class="wrap stage__grid">
+    <div class="card">
       <p class="kicker" data-r>Masterclass online de imagen y estilo</p>
-      <h1 data-r><span class="line">Tu rostro ya sabe</span> <span class="line">qué ponerte.</span></h1>
-      <p class="script hero__script" data-r>Te enseño a leerlo.</p>
-      <p class="hero__lead" data-r>Tus líneas, tus tamaños, tus estampados, tus texturas, tus proporciones y tus colores. Arma <b>tu instructivo personal</b> desde tu casa, con un espejo, y deja de adivinar frente al clóset.</p>
-      <div class="hero__cta" data-hero-cta data-r>
+      <h1 data-r>Tu rostro ya sabe qué ponerte.</h1>
+      <p class="script card__script" data-r>Te enseño a leerlo.</p>
+      <p class="card__lead" data-r>Tus líneas, tus tamaños, tus estampados, tus texturas, tus proporciones y tus colores. Arma <b>tu instructivo personal</b> desde tu casa, con un espejo, y deja de adivinar frente al clóset.</p>
+      <div class="cta cta--desk" data-r>
         <a class="btn btn--lg" data-checkout href="#">Quiero descubrir mi Best Look <span class="btn__arrow" aria-hidden="true">→</span></a>
-        <p class="hero__price"><s data-price-before>$89</s> <b data-price>$80 USD</b> · pago único</p>
+        <p class="cta__price"><s data-price-before>$89</s> <b data-price>$80 USD</b> · pago único</p>
       </div>
       <ul class="ticks" data-r><li>Acceso inmediato</li><li>A tu ritmo</li><li>Garantía de <span data-guarantee>7</span> días</li></ul>
     </div>
 
-    <div class="mirror" aria-label="Luzma con distintos looks">
-      <svg class="mirror__text" viewBox="0 0 600 600" aria-hidden="true">
-        <defs><path id="ring" d="M300,300 m-276,0 a276,276 0 1,1 552,0 a276,276 0 1,1 -552,0"/></defs>
-        <text><textPath href="#ring">Your Best Look · by Luzma · Imagen y estilo · 30 años creando belleza ·</textPath></text>
-      </svg>
-      <svg class="mirror__ring" viewBox="0 0 600 600" aria-hidden="true"><circle cx="300" cy="300" r="246"/></svg>
-      <div class="mirror__glass">
-        <img class="is-on" src="assets/img/look-rosa.jpg" alt="Luzma con look rosa y estampado floral" width="720" height="900">
-        <img src="assets/img/look-turquesa.jpg" alt="" width="720" height="900" loading="lazy">
-        <img src="assets/img/look-lunares.jpg" alt="" width="720" height="900" loading="lazy">
-        <img src="assets/img/look-rojo.jpg" alt="" width="720" height="900" loading="lazy">
-        <img src="assets/img/look-morado.jpg" alt="" width="720" height="900" loading="lazy">
-        <img src="assets/img/look-estampado.jpg" alt="" width="720" height="900" loading="lazy">
+    <div class="mirror2" id="clase">
+      <div class="mirror2__frame">
+        <div class="video" data-video></div>
       </div>
-      <div class="mirror__tag"><span class="mirror__n">01</span><span class="mirror__label">Rosa y floral</span></div>
-      <span class="chip chip--a" style="--c:#d6247c" aria-hidden="true"></span>
-      <span class="chip chip--b" style="--c:#13a3a8" aria-hidden="true"></span>
-      <span class="chip chip--c" style="--c:#f07a2a" aria-hidden="true"></span>
-      <p class="mirror__note script" aria-hidden="true">un solo método</p>
+      <div class="mirror2__foot" aria-hidden="true"></div>
+      <p class="sound">Sube el volumen · La clase de Luzma</p>
+    </div>
+
+    <div class="cta cta--mob" data-hero-cta>
+      <a class="btn btn--lg" data-checkout href="#">Quiero descubrir mi Best Look <span class="btn__arrow" aria-hidden="true">→</span></a>
+      <p class="cta__price"><s data-price-before>$89</s> <b data-price>$80 USD</b> · pago único · Garantía de <span data-guarantee>7</span> días</p>
     </div>
   </div>
 </header>
-
-<!-- VIDEO -->
-<section class="watch" id="clase">
-  <div class="wrap watch__grid">
-    <div class="watch__copy">
-      <p class="kicker" data-r>La clase de Luzma</p>
-      <h2 data-r>Antes de decidir, <em>mírala a ella.</em></h2>
-      <p data-r>Siete minutos para entender por qué esa prenda que se ve increíble en otras no se te ve igual a ti, y qué está escrito en tu rostro.</p>
-      <ol class="watch__list" data-r>
-        <li>Tu talla de estampado</li>
-        <li>Rectas o curvas</li>
-        <li>El error de copiar</li>
-        <li>Tu pregunta clave</li>
-      </ol>
-    </div>
-    <div class="watch__frame" data-r>
-      <div class="video" data-video></div>
-      <p class="sound">Sube el volumen</p>
-    </div>
-  </div>
-</section>
 
 <!-- HERRAMIENTAS EN MARQUESINA -->
 <div class="marquee" aria-label="Lo que vas a dominar">
@@ -148,11 +128,11 @@ fbq('track', 'PageView');
 <!-- NO VERBAL -->
 <section class="nonverbal">
   <div class="wrap nv__grid">
-    <figure class="nv__photo iris" data-r>
-      <img src="assets/img/look-rojo.jpg" alt="Luzma con look rojo total" width="720" height="900" loading="lazy" data-par="-.06">
-    </figure>
-    <div class="nv__copy">
+    <div class="nv__big" aria-hidden="true">
       <p class="nv__stat" data-r><b data-count="80">80</b><span>%</span></p>
+      <svg class="nv__eye" viewBox="0 0 200 100"><path d="M10 50 Q100 -10 190 50 Q100 110 10 50Z"/><circle cx="100" cy="50" r="22"/><circle cx="100" cy="50" r="9"/></svg>
+    </div>
+    <div class="nv__copy">
       <p class="nv__statlabel" data-r>de lo que comunicas no lo dices: se ve.</p>
       <h2 data-r>Tu imagen ya habló <em>por ti.</em></h2>
       <p data-r>En una junta, en una cita, al entrar a un restaurante. Las personas te leen en segundos, aunque no te conozcan. Eso es comunicación no verbal, y es la mayor parte de lo que decimos.</p>
@@ -201,28 +181,6 @@ fbq('track', 'PageView');
   </div>
 </section>
 
-<!-- LOOKBOOK -->
-<section class="lookbook">
-  <div class="wrap lookbook__head">
-    <p class="kicker" data-r>Ella lo vive</p>
-    <h2 data-r>Diez looks. <em>Un solo método.</em></h2>
-    <p data-r>Cambia la ropa, el color y el estampado. No cambia la esencia. Así se ve una mujer que ya sabe leerse.</p>
-  </div>
-  <div class="lookbook__rail" tabindex="0" aria-label="Galería de looks de Luzma">
-    <figure class="look" style="--t:-2deg"><img src="assets/img/look-rosa.jpg" alt="Luzma con look rosa y estampado floral" width="720" height="900" loading="lazy"><figcaption><b>01</b> Rosa y floral</figcaption></figure>
-    <figure class="look" style="--t:1.5deg"><img src="assets/img/look-turquesa.jpg" alt="Luzma con kimono turquesa" width="720" height="900" loading="lazy"><figcaption><b>02</b> Turquesa, color universal</figcaption></figure>
-    <figure class="look" style="--t:-1deg"><img src="assets/img/look-lunares.jpg" alt="Luzma con blazer de lunares" width="720" height="900" loading="lazy"><figcaption><b>03</b> Lunares</figcaption></figure>
-    <figure class="look" style="--t:2deg"><img src="assets/img/look-morado.jpg" alt="Luzma con traje morado" width="720" height="900" loading="lazy"><figcaption><b>04</b> Morado obispo, color universal</figcaption></figure>
-    <figure class="look" style="--t:-1.5deg"><img src="assets/img/look-rojo.jpg" alt="Luzma con look rojo" width="720" height="900" loading="lazy"><figcaption><b>05</b> Rojo total</figcaption></figure>
-    <figure class="look" style="--t:1deg"><img src="assets/img/look-cielo.jpg" alt="Luzma con look azul cielo" width="720" height="900" loading="lazy"><figcaption><b>06</b> Azul cielo</figcaption></figure>
-    <figure class="look" style="--t:-2deg"><img src="assets/img/look-estampado.jpg" alt="Luzma con blusa estampada" width="720" height="900" loading="lazy"><figcaption><b>07</b> Estampado en tierra</figcaption></figure>
-    <figure class="look" style="--t:1.5deg"><img src="assets/img/look-ciruela.jpg" alt="Luzma con look ciruela" width="720" height="900" loading="lazy"><figcaption><b>08</b> Ciruela</figcaption></figure>
-    <figure class="look" style="--t:-1deg"><img src="assets/img/look-olivo.jpg" alt="Luzma con saco de cuadros olivo" width="720" height="900" loading="lazy"><figcaption><b>09</b> Cuadros olivo</figcaption></figure>
-    <figure class="look" style="--t:2deg"><img src="assets/img/look-militar.jpg" alt="Luzma con chaqueta verde militar" width="720" height="900" loading="lazy"><figcaption><b>10</b> Verde militar</figcaption></figure>
-  </div>
-  <p class="lookbook__hint wrap" aria-hidden="true">Desliza →</p>
-</section>
-
 <!-- LA MAGIA DEL COLOR -->
 <section class="color">
   <div class="wrap">
@@ -257,7 +215,22 @@ fbq('track', 'PageView');
 
     <div class="drape" data-r>
       <div class="drape__stage" style="--drape:#d6247c">
-        <div class="drape__face"><img src="assets/img/rostro.jpg" alt="Retrato de Luzma para la prueba de color" width="600" height="600" loading="lazy"></div>
+        <div class="drape__face"><svg viewBox="0 0 300 300" role="img" aria-label="Rostro ilustrado para la prueba de color">
+          <rect width="300" height="300" fill="#2a1628"/>
+          <path d="M84 150 C70 70 120 34 158 38 C214 42 236 92 222 160 C214 120 196 96 170 90 C150 104 116 108 96 100 C88 118 86 134 84 150Z" fill="#3a1e38"/>
+          <circle cx="152" cy="34" r="24" fill="#3a1e38"/>
+          <path d="M128 208 V262 H174 V208Z" fill="#e7bfa2"/>
+          <ellipse cx="152" cy="146" rx="62" ry="76" fill="#eec8ab"/>
+          <path d="M96 104 C120 112 156 106 176 88 C196 100 210 116 214 138 C210 96 186 70 152 70 C116 70 94 92 96 104Z" fill="#3a1e38"/>
+          <g fill="none" stroke="#2a1628" stroke-width="3" stroke-linecap="round">
+            <path d="M114 128 Q127 120 140 126"/><path d="M164 126 Q177 120 190 128"/>
+            <path d="M118 144 Q128 151 138 144"/><path d="M166 144 Q176 151 186 144"/>
+            <path d="M152 146 Q146 168 152 176 Q156 178 160 175"/>
+          </g>
+          <path d="M134 192 Q152 184 170 192 Q152 206 134 192Z" fill="#b8456c"/>
+          <circle cx="90" cy="164" r="7" fill="#e9c46a"/><circle cx="214" cy="164" r="7" fill="#e9c46a"/>
+          <ellipse cx="120" cy="170" rx="13" ry="7" fill="#e58aa4" opacity=".35"/><ellipse cx="184" cy="170" rx="13" ry="7" fill="#e58aa4" opacity=".35"/>
+        </svg></div>
         <div class="drape__sheet" aria-hidden="true"></div>
       </div>
       <div class="drape__copy">
@@ -335,7 +308,6 @@ fbq('track', 'PageView');
       <p class="kicker" data-r>Masterclass completa</p>
       <h2 data-r>El temario, <em>paso a paso.</em></h2>
       <p data-r>La secuencia está diseñada para que construyas tu best look capítulo por capítulo. Cada uno trae su material de apoyo y tu cuaderno de trabajo para ir anotando tu instructivo.</p>
-      <figure class="syllabus__photo iris" data-r><img src="assets/img/look-lunares.jpg" alt="Luzma con blazer de lunares" width="720" height="900" loading="lazy"></figure>
     </div>
     <div class="chapters">
       <details class="ch" open data-r>
@@ -560,11 +532,7 @@ fbq('track', 'PageView');
 
 <!-- CTA FINAL -->
 <section class="final">
-  <div class="final__looks" aria-hidden="true">
-    <img src="assets/img/look-cielo.jpg" alt="" width="720" height="900" loading="lazy">
-    <img src="assets/img/look-turquesa.jpg" alt="" width="720" height="900" loading="lazy">
-    <img src="assets/img/look-ciruela.jpg" alt="" width="720" height="900" loading="lazy">
-  </div>
+  <div class="wardrobe wardrobe--final" aria-hidden="true"><div class="rail rail--final" data-closet data-count="12" data-offset="3"></div></div>
   <div class="wrap final__inner">
     <h2 data-r>Una copia nunca superará al original.</h2>
     <p class="script final__script" data-r>Y tú eres el original.</p>
@@ -591,6 +559,7 @@ fbq('track', 'PageView');
 
 <script src="assets/config.js?v=6"></script>
 <script src="assets/app.js?v=6"></script>
-<script src="assets/motion.js?v=1"></script>
+<script src="assets/closet.js?v=1"></script>
+<script src="assets/motion.js?v=2"></script>
 </body>
 </html>
