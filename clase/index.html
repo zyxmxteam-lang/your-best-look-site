@@ -20,45 +20,34 @@ fbq('track', 'PageView');
 <meta name="robots" content="noindex">
 <link rel="icon" type="image/png" href="../assets/favicon.png">
 <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
-<meta property="og:image" content="https://yourbestlookbyluzma.com/assets/og.jpg">
-<meta name="theme-color" content="#1d0d1b">
+<meta property="og:image" content="https://your-best-look.lafinestra-web.workers.dev/assets/og.jpg">
+<meta name="theme-color" content="#3a1e38">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/ybl.css?v=3">
+<link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/styles.css?v=10">
 </head>
 <body class="ads" data-gated>
 
-<div class="wardrobe wardrobe--ads" aria-hidden="true">
-  <div class="rail rail--ads" data-closet data-count="12" data-offset="2"></div>
-</div>
-
-<main class="ads__main">
-  <header class="ads__head">
-    <img class="ads__logo" src="../assets/logo.png" alt="Your Best Look by Luzma" width="84" height="84">
-    <p class="kicker">Clase gratuita · 7 minutos</p>
-    <h1>Tu rostro ya sabe qué ponerte.</h1>
-    <p class="script ads__script">Mira cómo leerlo.</p>
-    <p class="ads__sub">Por qué esa prenda que se ve increíble en otras no se te ve igual a ti… y lo que nadie te había dicho sobre tu estilo.</p>
+<main class="wrap">
+  <header class="ads-head">
+    <img class="logo-img" src="../assets/logo.png" alt="Your Best Look by Luzma" width="140" height="140"><br>
+    <span class="eyebrow">Clase gratuita · 7 minutos</span>
+    <h1>Tu rostro ya sabe qué ponerte. <em class="s">Mira cómo leerlo.</em></h1>
+    <p>Por qué esa prenda que se ve increíble en otras no se te ve igual a ti… y lo que nadie te había dicho sobre tu estilo.</p>
   </header>
 
-  <div class="ads__stage">
-    <svg class="ads__ring" viewBox="0 0 600 600" aria-hidden="true">
-      <defs><path id="ring" d="M300,300 m-282,0 a282,282 0 1,1 564,0 a282,282 0 1,1 -564,0"/></defs>
-      <text><textPath href="#ring">Your Best Look · by Luzma · Clase gratuita · Your Best Look · by Luzma · Clase gratuita ·</textPath></text>
-    </svg>
-    <div class="video" data-video></div>
-  </div>
-  <p class="sound">Sube el volumen · Mira la clase completa</p>
+  <div class="video" data-video></div>
+  <p class="sound">🔊 Sube el volumen · Mira la clase completa</p>
 
-  <ol class="learn">
+  <ul class="learn">
     <li><b>Tu talla de estampado.</b> Por qué el estampado equivocado hace que tu rostro "desaparezca".</li>
     <li><b>Rectas o curvas.</b> Lo que tus facciones comunican antes de que digas una palabra.</li>
     <li><b>El error de copiar.</b> Por qué el outfit idéntico de alguien más nunca se te ve igual.</li>
     <li><b>Tu pregunta clave.</b> La única pregunta que te tienes que hacer frente al espejo.</li>
-  </ol>
+  </ul>
 
   <div class="mini-bio">
-    <img src="../assets/img/rostro.jpg" alt="Luzma" width="600" height="600" loading="lazy">
+    <div class="monogram" aria-hidden="true">L</div>
     <p><b>Luzma</b> · 64 años, diseñadora por la Ibero, formada en Nueva York y Milán. Más de tres décadas creando belleza a través de la imagen personal.</p>
   </div>
 
@@ -66,12 +55,10 @@ fbq('track', 'PageView');
     <div class="gate-wait"><i></i> Tu lugar en la masterclass aparece al terminar la clase</div>
 
     <div class="gate-open">
-      <p class="gate__lead">Hermosa, el primer paso ya lo diste. <em>El siguiente es atreverte.</em></p>
-      <div class="ticket">
-        <div class="ticket__top">
-          <img src="../assets/logo.png" alt="" width="72" height="72">
-          <div><h3>Your Best Look</h3><p>Masterclass completa de imagen y estilo</p></div>
-        </div>
+      <p class="lead">Hermosa, el primer paso ya lo diste. El siguiente es atreverte.</p>
+      <div class="offer-card">
+        <h3>Your Best Look</h3>
+        <p class="offer-sub">Masterclass completa de imagen y estilo</p>
         <ul class="stack">
           <li><b>Bienvenida + 5 capítulos + Conclusión</b><span>Líneas, estampados, estilo y texturas, proporciones y color.</span></li>
           <li><b>Tu cuaderno de trabajo y material de apoyo</b><span>Tests, láminas de tamaños, ejemplos visuales y hojas de color.</span></li>
@@ -80,29 +67,27 @@ fbq('track', 'PageView');
           <li><b>El ejercicio de integración del clóset</b><span>Menos ropa, más opciones, todo combina contigo.</span></li>
           <li><b>Acceso para siempre, a tu ritmo</b><span>Desde tu celular o tu computadora.</span></li>
         </ul>
-        <div class="ticket__cut" aria-hidden="true"></div>
         <div class="price"><span class="was">Antes <s data-price-before>$89 USD</s></span><span class="amt" data-price>$80 USD</span><span class="note">Pago único · Acceso inmediato</span></div>
-        <a class="btn btn--lg btn--block" data-checkout href="#">Quiero descubrir mi Best Look <span class="btn__arrow" aria-hidden="true">→</span></a>
-        <p class="micro">Pago seguro con Hotmart · Tarjeta, PayPal y más</p>
-        <div class="guarantee guarantee--light">
-          <div class="seal"><svg viewBox="0 0 120 120" aria-hidden="true"><defs><path id="seal" d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"/></defs><text><textPath href="#seal">garantía total · sin preguntas · garantía total · sin preguntas ·</textPath></text></svg><b><span data-guarantee>7</span><small>días</small></b></div>
+        <a class="btn btn--lg btn--block" data-checkout href="#">Quiero descubrir mi Best Look</a>
+        <div class="micro"><span>Pago seguro con Hotmart</span><span>Tarjeta, PayPal y más</span></div>
+        <div class="guarantee">
+          <div class="seal"><div><b data-guarantee>7</b>días</div></div>
           <p><strong>Garantía total de <span data-guarantee>7</span> días.</strong> Haz tus pruebas frente al espejo. Si sientes que no es para ti, te devolvemos el 100%. Sin preguntas.</p>
         </div>
       </div>
-      <p class="gate__close">Una copia nunca superará al original. <span class="script">Y tú eres el original.</span></p>
+      <p class="lead" style="margin-top:34px">Una copia nunca superará al original. <em class="s">Y tú eres el original.</em></p>
     </div>
   </div>
 </main>
 
-<footer class="ads__foot">© Your Best Look by Luzma</footer>
+<footer>© Your Best Look by Luzma</footer>
 
 <div class="sticky-cta">
   <div class="t"><b>Your Best Look</b><s class="was-inline" data-price-before>$89</s> <span data-price>$80 USD</span><span class="sticky-g"> · Garantía de <span data-guarantee>7</span> días</span></div>
   <a class="btn" data-checkout href="#">Quiero mi Best Look</a>
 </div>
 
-<script src="../assets/config.js?v=6"></script>
-<script src="../assets/app.js?v=6"></script>
-<script src="../assets/closet.js?v=1"></script>
+<script src="../assets/config.js?v=5"></script>
+<script src="../assets/app.js?v=5"></script>
 </body>
 </html>
