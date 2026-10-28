@@ -662,3 +662,11 @@ body::after{content:"";position:fixed;inset:0;z-index:70;pointer-events:none;opa
   .nv__big{align-items:center}
 }
 @media(prefers-reduced-motion:reduce){.rail__track,.g{animation:none!important}}
+
+/* /clase: el clóset de fondo, sutil para no competir con el video */
+.ads{position:relative}
+.wardrobe--ads{height:min(78svh,640px);opacity:.3;-webkit-mask-image:linear-gradient(180deg,#000 30%,transparent 100%);mask-image:linear-gradient(180deg,#000 30%,transparent 100%)}
+.rail--ads{top:16px;--speed:120s}
+.ads__main,.ads__foot{position:relative;z-index:1}
+@media(max-width:900px){.rail--ads{transform:scale(.6);transform-origin:0 0;width:170%}.wardrobe--ads{opacity:.26}}
+.ads__head h1,.ads__script,.ads__sub,.ads .kicker{text-shadow:0 2px 18px rgba(20,8,18,.85)}
