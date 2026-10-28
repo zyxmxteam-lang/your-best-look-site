@@ -3,7 +3,7 @@
    ============================================================ */
 window.YBL = {
   // Link del checkout de Hotmart (pay.hotmart.com/…)
-  HOTMART_URL: "https://pay.hotmart.com/XXXXXXXXX",
+  HOTMART_URL: "https://pay.hotmart.com/Y108122830M",
 
   // URL del VSL. Acepta:
   //  - Archivo directo .mp4 o .m3u8 (Bunny, Cloudflare Stream, S3…): detecta exactamente
