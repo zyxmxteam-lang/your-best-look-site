@@ -19,198 +19,182 @@ fbq('track', 'PageView');
 <meta name="description" content="Tu rostro ya sabe qué ponerte. Aprende a leerlo con Luzma: líneas, tamaños, estampados, saturación, texturas, proporciones y color. Masterclass online · $80 USD · Garantía de 7 días.">
 <meta property="og:title" content="Your Best Look by Luzma">
 <meta property="og:description" content="No te falta ropa. Te falta tu instructivo personal. Masterclass online de imagen y estilo con Luzma, 30+ años creando belleza.">
+<meta property="og:image" content="https://yourbestlookbyluzma.com/assets/og.jpg">
 <link rel="icon" type="image/png" href="assets/favicon.png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-<meta property="og:image" content="https://yourbestlookbyluzma.com/assets/og.jpg">
-<meta name="theme-color" content="#2a1628">
+<meta name="theme-color" content="#efe6ea">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/ybl.css?v=3">
+<link href="https://fonts.googleapis.com/css2?family=Allura&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/img/portada.webp">
+<link rel="stylesheet" href="assets/issue.css?v=1">
 </head>
-<body class="sales">
+<body>
 
-<div class="progress" aria-hidden="true"><i></i></div>
-
-<div class="topbar">
-  <div class="topbar__track">
-    <span>Masterclass completa</span><span>5 capítulos + cuaderno de trabajo</span><span>Garantía de <span data-guarantee>7</span> días</span><span>Acceso para siempre</span>
-    <span aria-hidden="true">Masterclass completa</span><span aria-hidden="true">5 capítulos + cuaderno de trabajo</span><span aria-hidden="true">Garantía de 7 días</span><span aria-hidden="true">Acceso para siempre</span>
-  </div>
+<!-- Folio: la barra de la revista -->
+<div class="folio" data-folio-bar>
+  <a class="folio__brand" href="#portada">Your Best Look</a>
+  <span class="folio__ed">Edición Nº 01 · Imagen y estilo</span>
+  <span class="folio__p">p. <b data-folio>01</b></span>
+  <a class="folio__buy" data-checkout href="#">Comprar · <span data-price>$80 USD</span></a>
 </div>
 
-<!-- HERO: el clóset -->
-<header class="stage">
-  <div class="wardrobe" aria-hidden="true">
-    <div class="rail rail--back" data-closet data-count="12" data-offset="5"></div>
-    <div class="rail rail--front" data-closet data-count="11"></div>
-    <div class="stage__light"></div>
+<!-- 01 · PORTADA -->
+<header class="cover" id="portada" data-page="01">
+  <div class="cover__top">
+    <span>Masterclass online de imagen y estilo</span>
+    <span class="cover__by script">by Luzma</span>
+    <span>Edición Nº 01 · <span data-price>$80 USD</span></span>
   </div>
 
-  <nav class="stage__nav wrap">
-    <a class="brand" href="#" aria-label="Your Best Look by Luzma"><img src="assets/logo.png" alt="" width="48" height="48"><span>Your Best Look <em>by Luzma</em></span></a>
-    <a class="stage__navcta" href="#inscribete">Inscríbete · <span data-price>$80 USD</span></a>
-  </nav>
+  <h2 class="masthead" aria-label="Your Best Look"><span class="mh mh--a">Your Best</span> <span class="mh mh--b">Look</span></h2>
 
-  <div class="wrap stage__grid">
-    <div class="card">
-      <p class="kicker" data-r>Masterclass online de imagen y estilo</p>
-      <h1 data-r>Tu rostro ya sabe qué ponerte.</h1>
-      <p class="script card__script" data-r>Te enseño a leerlo.</p>
-      <p class="card__lead" data-r>Tus líneas, tus tamaños, tus estampados, tus texturas, tus proporciones y tus colores. Arma <b>tu instructivo personal</b> desde tu casa, con un espejo, y deja de adivinar frente al clóset.</p>
-      <div class="cta cta--desk" data-r>
-        <a class="btn btn--lg" data-checkout href="#">Quiero descubrir mi Best Look <span class="btn__arrow" aria-hidden="true">→</span></a>
-        <p class="cta__price"><s data-price-before>$89</s> <b data-price>$80 USD</b> · pago único</p>
-      </div>
-      <ul class="ticks" data-r><li>Acceso inmediato</li><li>A tu ritmo</li><li>Garantía de <span data-guarantee>7</span> días</li></ul>
+  <figure class="cover__star">
+    <img src="assets/img/portada.webp" alt="Luzma, asesora de imagen, con traje morado" width="900" height="1154" fetchpriority="high">
+  </figure>
+
+  <div class="cover__line cover__line--a" aria-hidden="true"><b>Nº 7</b> estilos.<br><em>¿Cuál eres tú?</em></div>
+  <div class="cover__line cover__line--b" aria-hidden="true">La prueba del <em>fucsia</em> y el <em>naranja</em></div>
+
+  <div class="cover__grid">
+    <div class="cover__copy">
+      <p class="tag">Exclusiva · La masterclass</p>
+      <h1>Tu rostro ya sabe qué ponerte.</h1>
+      <p class="script cover__script">Te enseño a leerlo.</p>
+      <p class="cover__lead">Tus líneas, tus tamaños, tus estampados, tus texturas, tus proporciones y tus colores. Arma <b>tu instructivo personal</b> desde tu casa, con un espejo, y deja de adivinar frente al clóset.</p>
     </div>
 
-    <div class="mirror2" id="clase">
-      <div class="mirror2__frame">
-        <div class="video" data-video></div>
-      </div>
-      <div class="mirror2__foot" aria-hidden="true"></div>
-      <p class="sound">Sube el volumen · La clase de Luzma</p>
-    </div>
+    <aside class="tear" id="clase" aria-label="La clase de Luzma">
+      <p class="tear__k">▶ La clase de Luzma · 7 min</p>
+      <div class="video" data-video></div>
+      <p class="tear__cap">Sube el volumen. Antes de decidir, mírala a ella.</p>
+    </aside>
 
-    <div class="cta cta--mob" data-hero-cta>
-      <a class="btn btn--lg" data-checkout href="#">Quiero descubrir mi Best Look <span class="btn__arrow" aria-hidden="true">→</span></a>
-      <p class="cta__price"><s data-price-before>$89</s> <b data-price>$80 USD</b> · pago único · Garantía de <span data-guarantee>7</span> días</p>
+    <div class="cover__buy" data-hero-cta>
+      <a class="btn" data-checkout href="#">Quiero descubrir mi Best Look <span class="btn__arrow" aria-hidden="true">→</span></a>
+      <div class="barcode" aria-label="Precio">
+        <i aria-hidden="true"></i>
+        <p><s data-price-before>$89</s> <b data-price>$80 USD</b><span>Pago único · Garantía de <span data-guarantee>7</span> días</span></p>
+      </div>
     </div>
   </div>
 </header>
 
-<!-- HERRAMIENTAS EN MARQUESINA -->
-<div class="marquee" aria-label="Lo que vas a dominar">
-  <div class="marquee__track">
-    <span>Líneas</span><i>✦</i><span class="o">Tamaños</span><i>✦</i><span>Estampados</span><i>✦</i><span class="o">Saturación</span><i>✦</i><span>Texturas</span><i>✦</i><span class="o">Proporciones</span><i>✦</i><span>Color</span><i>✦</i><span class="o">Tu estilo</span><i>✦</i>
-    <span aria-hidden="true">Líneas</span><i>✦</i><span class="o" aria-hidden="true">Tamaños</span><i>✦</i><span aria-hidden="true">Estampados</span><i>✦</i><span class="o" aria-hidden="true">Saturación</span><i>✦</i><span aria-hidden="true">Texturas</span><i>✦</i><span class="o" aria-hidden="true">Proporciones</span><i>✦</i><span aria-hidden="true">Color</span><i>✦</i><span class="o" aria-hidden="true">Tu estilo</span><i>✦</i>
+<!-- EN ESTA EDICIÓN -->
+<div class="ticker" aria-label="En esta edición">
+  <div class="ticker__track">
+    <span>Tu talla de estampado</span><i>✦</i><span>La prueba del fucsia y el naranja</span><i>✦</i><span>Los 7 estilos</span><i>✦</i><span>Del Hombre de Vitruvio a tu espejo</span><i>✦</i><span>Las 4 estaciones</span><i>✦</i><span>El ejercicio del clóset</span><i>✦</i>
+    <span aria-hidden="true">Tu talla de estampado</span><i>✦</i><span aria-hidden="true">La prueba del fucsia y el naranja</span><i>✦</i><span aria-hidden="true">Los 7 estilos</span><i>✦</i><span aria-hidden="true">Del Hombre de Vitruvio a tu espejo</span><i>✦</i><span aria-hidden="true">Las 4 estaciones</span><i>✦</i><span aria-hidden="true">El ejercicio del clóset</span><i>✦</i>
   </div>
 </div>
 
-<!-- ¿TE SUENA? -->
-<section class="pain">
-  <div class="wrap pain__grid">
-    <div class="pain__head">
-      <p class="kicker" data-r>Sé honesta</p>
-      <h2 data-r>¿Cuántas de estas <em>te han pasado?</em></h2>
-      <p class="pain__count" aria-hidden="true"><b data-pain-count>0</b><span>/7</span></p>
+<!-- 03 · EL TEST -->
+<section class="quiz" data-page="03">
+  <div class="wrap quiz__grid">
+    <div class="quiz__head">
+      <p class="tag" data-r>El test · Sé honesta</p>
+      <h2 data-split>¿Cuántas de estas <em>te han pasado?</em></h2>
+      <p class="quiz__score" aria-live="polite"><b data-quiz-n>0</b><span>de 7</span></p>
+      <p class="quiz__verdict" data-quiz-msg>Marca las que te suenen.</p>
     </div>
-    <ol class="pain__list">
-      <li data-r>Tienes el clóset lleno… y aun así <b>"no tienes qué ponerte"</b>.</li>
-      <li data-r>Esa prenda se veía increíble en el maniquí. En ti, no.</li>
-      <li data-r>Copiaste el outfit idéntico de alguien en redes, y no se te ve igual.</li>
-      <li data-r>Hay colores que te hacen ver cansada, y te lo dicen: "¿te sientes bien?".</li>
-      <li data-r>Te pruebas cinco cosas antes de salir y terminas con lo de siempre.</li>
-      <li data-r>Frente al espejo sientes que "algo no cuadra", pero no sabes qué.</li>
-      <li data-r>Llevas años disimulando esa parte de ti que no te gusta.</li>
+    <ol class="quiz__list">
+      <li data-r><label><input type="checkbox"><span>Tienes el clóset lleno… y aun así <b>"no tienes qué ponerte"</b>.</span></label></li>
+      <li data-r><label><input type="checkbox"><span>Esa prenda se veía increíble en el maniquí. En ti, no.</span></label></li>
+      <li data-r><label><input type="checkbox"><span>Copiaste el outfit idéntico de alguien en redes, y no se te ve igual.</span></label></li>
+      <li data-r><label><input type="checkbox"><span>Hay colores que te hacen ver cansada, y te lo dicen: "¿te sientes bien?".</span></label></li>
+      <li data-r><label><input type="checkbox"><span>Te pruebas cinco cosas antes de salir y terminas con lo de siempre.</span></label></li>
+      <li data-r><label><input type="checkbox"><span>Frente al espejo sientes que "algo no cuadra", pero no sabes qué.</span></label></li>
+      <li data-r><label><input type="checkbox"><span>Llevas años disimulando esa parte de ti que no te gusta.</span></label></li>
     </ol>
   </div>
-  <p class="pain__turn wrap" data-r>Hermosa, el problema no eres tú. <em>Es que nadie te dio tu instructivo.</em></p>
+  <p class="quiz__turn wrap" data-r>Hermosa, el problema no eres tú. <em>Es que nadie te dio tu instructivo.</em></p>
 </section>
 
-<!-- NOS ENSEÑARON AL REVÉS -->
-<section class="reverse">
+<!-- 04 · AL REVÉS -->
+<section class="reverse" data-page="04" data-tone="dark">
   <div class="wrap">
-    <p class="kicker" data-r>Durante años nos enseñaron a corregirnos</p>
+    <p class="tag" data-r>Durante años nos enseñaron a corregirnos</p>
     <div class="rules">
-      <p data-r><span>Si tu rostro es redondo, alárgalo.</span></p>
-      <p data-r><span>Si es alargado, acórtalo.</span></p>
-      <p data-r><span>Si tienes curvas, disimúlalas.</span></p>
-      <p data-r><span>Si eres angulosa, suavízate.</span></p>
+      <p><span>Si tu rostro es redondo, alárgalo.</span></p>
+      <p><span>Si es alargado, acórtalo.</span></p>
+      <p><span>Si tienes curvas, disimúlalas.</span></p>
+      <p><span>Si eres angulosa, suavízate.</span></p>
     </div>
     <div class="reverse__answer">
-      <h2 data-r>¿Y si no hubiera <em>nada que corregir?</em></h2>
+      <h2 data-split>¿Y si no hubiera <em>nada que corregir?</em></h2>
       <p data-r>La armonía no está en cambiar tus formas, sino en <b>comprenderlas y expresarlas con libertad</b>. Tu construcción natural es la que permanece más allá del tiempo, incluso cuando tu peso cambia o tu estilo evoluciona. Ahí está tu mapa.</p>
     </div>
   </div>
 </section>
 
-<!-- NO VERBAL -->
-<section class="nonverbal">
-  <div class="wrap nv__grid">
-    <div class="nv__big" aria-hidden="true">
-      <p class="nv__stat" data-r><b data-count="80">80</b><span>%</span></p>
-      <svg class="nv__eye" viewBox="0 0 200 100"><path d="M10 50 Q100 -10 190 50 Q100 110 10 50Z"/><circle cx="100" cy="50" r="22"/><circle cx="100" cy="50" r="9"/></svg>
-    </div>
-    <div class="nv__copy">
-      <p class="nv__statlabel" data-r>de lo que comunicas no lo dices: se ve.</p>
-      <h2 data-r>Tu imagen ya habló <em>por ti.</em></h2>
+<!-- 05 · 80% -->
+<section class="eighty" data-page="05">
+  <div class="wrap eighty__grid">
+    <p class="eighty__n" aria-hidden="true"><b data-count="80">80</b><span>%</span></p>
+    <div class="eighty__copy">
+      <p class="tag" data-r>Antes de que abras la boca</p>
+      <p class="eighty__label" data-r>de lo que comunicas no lo dices: se ve.</p>
+      <h2 data-split>Tu imagen ya habló <em>por ti.</em></h2>
       <p data-r>En una junta, en una cita, al entrar a un restaurante. Las personas te leen en segundos, aunque no te conozcan. Eso es comunicación no verbal, y es la mayor parte de lo que decimos.</p>
       <p data-r>Entonces la pregunta no es si te ves bien o mal. La pregunta es: <b>¿lo que se ve de ti dice quién eres de verdad?</b></p>
     </div>
   </div>
 </section>
 
-<!-- LA GRAN IDEA: TALLA DE ESTAMPADO -->
-<section class="idea">
+<!-- 06 · TALLA DE ESTAMPADO -->
+<section class="print" data-page="06" data-tone="pink">
   <div class="wrap">
-    <p class="kicker" data-r>Lo que nadie te había dicho</p>
-    <h2 class="idea__title" data-r>Así como tienes talla de ropa, <em>tienes talla de estampado.</em></h2>
-    <div class="sizes" aria-hidden="true">
-      <div class="size" data-r style="--s:14px"><i></i><span>Petit</span></div>
-      <div class="size" data-r style="--s:26px"><i></i><span>Chico</span></div>
-      <div class="size" data-r style="--s:42px"><i></i><span>Mediano</span></div>
-      <div class="size" data-r style="--s:62px"><i></i><span>Grande</span></div>
-      <div class="size" data-r style="--s:88px"><i></i><span>Extra grande</span></div>
+    <p class="tag" data-r>El reportaje · Lo que nadie te había dicho</p>
+    <h2 class="print__title" data-split>Así como tienes talla de ropa, <em>tienes talla de estampado.</em></h2>
+  </div>
+  <div class="dots" aria-hidden="true">
+    <div class="dots__row" data-dots>
+      <div><i style="--s:.16"></i><span>Petit</span></div>
+      <div><i style="--s:.3"></i><span>Chico</span></div>
+      <div><i style="--s:.48"></i><span>Mediano</span></div>
+      <div><i style="--s:.7"></i><span>Grande</span></div>
+      <div><i style="--s:1"></i><span>Extra grande</span></div>
     </div>
-    <div class="idea__grid">
-      <p data-r>Y de aretes, de collares, de solapas, de cuellos, de texturas y hasta de corte de cabello. Esa talla no la decide tu estatura, ni tu peso, ni tu edad, ni la moda. <b>La decide tu rostro.</b></p>
-      <blockquote data-r>"Cuando el estampado es más grande de lo que te corresponde, tu rostro visualmente se encoge y pasa a segundo plano."<cite>Luzma · Capítulo 2</cite></blockquote>
-    </div>
+  </div>
+  <div class="wrap print__grid">
+    <p data-r>Y de aretes, de collares, de solapas, de cuellos, de texturas y hasta de corte de cabello. Esa talla no la decide tu estatura, ni tu peso, ni tu edad, ni la moda. <b>La decide tu rostro.</b></p>
+    <blockquote data-r><span class="q" aria-hidden="true">“</span>Cuando el estampado es más grande de lo que te corresponde, tu rostro visualmente se encoge y pasa a segundo plano.<cite>Luzma · Capítulo 2</cite></blockquote>
   </div>
 </section>
 
-<!-- EL MÉTODO -->
-<section class="method">
-  <div class="wrap">
+<!-- 08 · EL MÉTODO -->
+<section class="method" data-page="08">
+  <div class="wrap method__grid">
     <div class="method__head">
-      <p class="kicker" data-r>El método Your Best Look</p>
-      <h2 data-r>Tu instructivo personal, <em>en 7 herramientas.</em></h2>
+      <p class="tag" data-r>El método Your Best Look</p>
+      <h2 data-split>Tu instructivo personal, <em>en 7 herramientas.</em></h2>
       <p data-r>Cuando las respetas, tu imagen se ordena. Cuando ignoras una, algo se siente fuera de lugar, aunque no sepas qué. Aquí las aprendes una por una, en orden, y al final las juntas.</p>
     </div>
     <ol class="tools">
-      <li data-r><span class="tools__n">01</span><h3>Tus líneas</h3><p>En la naturaleza solo hay dos: rectas y curvas. Todas tenemos ambas, pero una predomina. Las rectas comunican elegancia y firmeza; las curvas, suavidad y feminidad.</p><svg class="glyph" viewBox="0 0 80 40" aria-hidden="true"><path d="M4 34 L40 6 L76 34"/><path d="M4 34 C20 2 60 2 76 34" class="alt"/></svg></li>
-      <li data-r><span class="tools__n">02</span><h3>Tus tamaños</h3><p>De petit a extra grande. Que te vean a ti, no a lo que traes puesto. Lo decide tu rostro en conjunto con tus facciones.</p><svg class="glyph" viewBox="0 0 80 40" aria-hidden="true"><circle cx="8" cy="30" r="3"/><circle cx="22" cy="27" r="6"/><circle cx="42" cy="23" r="10"/><circle cx="66" cy="19" r="14"/></svg></li>
-      <li data-r><span class="tools__n">03</span><h3>Tus estampados</h3><p>Con estructura, con movimiento o con ambos. El estampado no solo decora: dialoga con tu arquitectura.</p><svg class="glyph" viewBox="0 0 80 40" aria-hidden="true"><rect x="4" y="8" width="10" height="10"/><rect x="20" y="8" width="10" height="10"/><rect x="4" y="24" width="10" height="10"/><path d="M40 30 C48 6 56 34 64 10 S76 20 78 14" class="alt"/></svg></li>
-      <li data-r><span class="tools__n">04</span><h3>Tu saturación</h3><p>Cuánta información visual sostienes con belleza. Para unas, menos es más. Para otras, más es mejor. Lo justo para ti.</p><svg class="glyph" viewBox="0 0 80 40" aria-hidden="true"><circle cx="10" cy="20" r="3"/><circle cx="30" cy="12" r="3"/><circle cx="30" cy="28" r="3"/><circle cx="50" cy="10" r="3"/><circle cx="50" cy="20" r="3"/><circle cx="50" cy="30" r="3"/><circle cx="66" cy="8" r="3"/><circle cx="74" cy="16" r="3"/><circle cx="66" cy="24" r="3"/><circle cx="74" cy="32" r="3"/></svg></li>
-      <li data-r><span class="tools__n">05</span><h3>Tus texturas</h3><p>Suaves y ligeras, o gruesas y con cuerpo. Por qué el mismo suéter a una le queda perfecto y a otra se la come.</p><svg class="glyph" viewBox="0 0 80 40" aria-hidden="true"><path d="M4 12 Q14 6 24 12 T44 12 T64 12 T80 12"/><path d="M4 22 Q14 16 24 22 T44 22 T64 22 T80 22"/><path d="M4 32 Q14 26 24 32 T44 32 T64 32 T80 32"/></svg></li>
-      <li data-r><span class="tools__n">06</span><h3>Tus proporciones</h3><p>Tres medidas con cinta métrica y el resto a ojo. Para equilibrar tu figura con construcciones inteligentes, no con trucos.</p><svg class="glyph" viewBox="0 0 80 40" aria-hidden="true"><path d="M4 30 H76"/><path d="M4 24 V36 M22 27 V33 M40 24 V36 M58 27 V33 M76 24 V36"/></svg></li>
-      <li data-r><span class="tools__n">07</span><h3>Tus colores</h3><p>Tu estación: invierno, verano, otoño o primavera. El marco que hace que te digan "¡qué bien te ves!" sin saber por qué.</p><svg class="glyph glyph--fill" viewBox="0 0 80 40" aria-hidden="true"><circle cx="12" cy="20" r="9" style="fill:#2b3f8a"/><circle cx="30" cy="20" r="9" style="fill:#b98fae"/><circle cx="48" cy="20" r="9" style="fill:#b5651d"/><circle cx="66" cy="20" r="9" style="fill:#f29e7c"/></svg></li>
-      <li class="tools__result" data-r><span class="tools__n">=</span><h3>Your Best Look</h3><p>Tu estilo de los 7, con su pregunta clave. Un instructivo hecho a tu medida que te sirve para toda la vida.</p><span class="script tools__you" aria-hidden="true">Tú</span></li>
+      <li data-r><span class="tools__n">01</span><div><h3>Tus líneas</h3><p>En la naturaleza solo hay dos: rectas y curvas. Todas tenemos ambas, pero una predomina. Las rectas comunican elegancia y firmeza; las curvas, suavidad y feminidad.</p></div></li>
+      <li data-r><span class="tools__n">02</span><div><h3>Tus tamaños</h3><p>De petit a extra grande. Que te vean a ti, no a lo que traes puesto. Lo decide tu rostro en conjunto con tus facciones.</p></div></li>
+      <li data-r><span class="tools__n">03</span><div><h3>Tus estampados</h3><p>Con estructura, con movimiento o con ambos. El estampado no solo decora: dialoga con tu arquitectura.</p></div></li>
+      <li data-r><span class="tools__n">04</span><div><h3>Tu saturación</h3><p>Cuánta información visual sostienes con belleza. Para unas, menos es más. Para otras, más es mejor. Lo justo para ti.</p></div></li>
+      <li data-r><span class="tools__n">05</span><div><h3>Tus texturas</h3><p>Suaves y ligeras, o gruesas y con cuerpo. Por qué el mismo suéter a una le queda perfecto y a otra se la come.</p></div></li>
+      <li data-r><span class="tools__n">06</span><div><h3>Tus proporciones</h3><p>Tres medidas con cinta métrica y el resto a ojo. Para equilibrar tu figura con construcciones inteligentes, no con trucos.</p></div></li>
+      <li data-r><span class="tools__n">07</span><div><h3>Tus colores</h3><p>Tu estación: invierno, verano, otoño o primavera. El marco que hace que te digan "¡qué bien te ves!" sin saber por qué.</p></div></li>
+      <li class="tools__sum" data-r><span class="tools__n">=</span><div><h3>Your Best Look</h3><p>Tu estilo de los 7, con su pregunta clave. Un instructivo hecho a tu medida que te sirve para toda la vida.</p></div></li>
     </ol>
   </div>
 </section>
 
-<!-- LA MAGIA DEL COLOR -->
-<section class="color">
+<!-- 10 · COLOR -->
+<section class="color" data-page="10">
   <div class="wrap">
     <div class="color__head">
-      <p class="kicker" data-r>Capítulo 5 · La magia del color</p>
-      <h2 data-r>Somos parte de la naturaleza. <em>Y tú tienes una estación.</em></h2>
+      <p class="tag" data-r>Capítulo 5 · La magia del color</p>
+      <h2 data-split>Somos parte de la naturaleza. <em>Y tú tienes una estación.</em></h2>
       <p data-r>Tu tono de piel, el color de tus ojos y el color de tu cabello de nacimiento (no el del tinte) forman tu colorido natural. Cuando eliges los colores que armonizan con él, pasa algo maravilloso: <b>la gente no sabe qué te hiciste, pero te dice "¡qué bien te ves!"</b>. Es como un maquillaje natural.</p>
     </div>
-
     <div class="seasons">
-      <article class="season" data-r style="--a:#0b1d4f;--b:#c4004f;--c:#ffffff;--d:#4b2aa8">
-        <div class="season__sw"><i></i><i></i><i></i><i></i></div>
-        <p class="season__k">Fría · intensa</p><h3>Invierno</h3>
-        <p>Contrastes fuertes, como la noche oscura sobre la nieve. Colores puros y plateados.</p>
-      </article>
-      <article class="season" data-r style="--a:#8fa3bf;--b:#c98da5;--c:#a7a3b8;--d:#5e7186">
-        <div class="season__sw"><i></i><i></i><i></i><i></i></div>
-        <p class="season__k">Fría · suave</p><h3>Verano</h3>
-        <p>Cabello cenizo, contraste suave. Imagina los colores vistos a través de la lluvia.</p>
-      </article>
-      <article class="season" data-r style="--a:#b5651d;--b:#6b7a2a;--c:#c99a3b;--d:#8b3a1e">
-        <div class="season__sw"><i></i><i></i><i></i><i></i></div>
-        <p class="season__k">Cálida · intensa</p><h3>Otoño</h3>
-        <p>Destellos cobrizos y dorados. Ocres, terracotas y verde olivo, como un árbol canadiense.</p>
-      </article>
-      <article class="season" data-r style="--a:#ff8a6b;--b:#9ccc4a;--c:#f5c36b;--d:#f29e7c">
-        <div class="season__sw"><i></i><i></i><i></i><i></i></div>
-        <p class="season__k">Cálida · suave</p><h3>Primavera</h3>
-        <p>Colorido delicado y luminoso. Corales, verde pasto nuevo y beige les sientan de maravilla.</p>
-      </article>
+      <article class="season" data-r style="--a:#0b1d4f;--b:#c4004f;--c:#ffffff;--d:#4b2aa8"><div class="season__chip"><i></i><i></i><i></i><i></i></div><p class="season__k">Fría · intensa</p><h3>Invierno</h3><p>Contrastes fuertes, como la noche oscura sobre la nieve. Colores puros y plateados.</p></article>
+      <article class="season" data-r style="--a:#8fa3bf;--b:#c98da5;--c:#a7a3b8;--d:#5e7186"><div class="season__chip"><i></i><i></i><i></i><i></i></div><p class="season__k">Fría · suave</p><h3>Verano</h3><p>Cabello cenizo, contraste suave. Imagina los colores vistos a través de la lluvia.</p></article>
+      <article class="season" data-r style="--a:#b5651d;--b:#6b7a2a;--c:#c99a3b;--d:#8b3a1e"><div class="season__chip"><i></i><i></i><i></i><i></i></div><p class="season__k">Cálida · intensa</p><h3>Otoño</h3><p>Destellos cobrizos y dorados. Ocres, terracotas y verde olivo, como un árbol canadiense.</p></article>
+      <article class="season" data-r style="--a:#ff8a6b;--b:#9ccc4a;--c:#f5c36b;--d:#f29e7c"><div class="season__chip"><i></i><i></i><i></i><i></i></div><p class="season__k">Cálida · suave</p><h3>Primavera</h3><p>Colorido delicado y luminoso. Corales, verde pasto nuevo y beige les sientan de maravilla.</p></article>
     </div>
 
     <div class="drape" data-r>
@@ -222,25 +206,21 @@ fbq('track', 'PageView');
           <path d="M128 208 V262 H174 V208Z" fill="#e7bfa2"/>
           <ellipse cx="152" cy="146" rx="62" ry="76" fill="#eec8ab"/>
           <path d="M96 104 C120 112 156 106 176 88 C196 100 210 116 214 138 C210 96 186 70 152 70 C116 70 94 92 96 104Z" fill="#3a1e38"/>
-          <g fill="none" stroke="#2a1628" stroke-width="3" stroke-linecap="round">
-            <path d="M114 128 Q127 120 140 126"/><path d="M164 126 Q177 120 190 128"/>
-            <path d="M118 144 Q128 151 138 144"/><path d="M166 144 Q176 151 186 144"/>
-            <path d="M152 146 Q146 168 152 176 Q156 178 160 175"/>
-          </g>
+          <g fill="none" stroke="#2a1628" stroke-width="3" stroke-linecap="round"><path d="M114 128 Q127 120 140 126"/><path d="M164 126 Q177 120 190 128"/><path d="M118 144 Q128 151 138 144"/><path d="M166 144 Q176 151 186 144"/><path d="M152 146 Q146 168 152 176 Q156 178 160 175"/></g>
           <path d="M134 192 Q152 184 170 192 Q152 206 134 192Z" fill="#b8456c"/>
-          <circle cx="90" cy="164" r="7" fill="#e9c46a"/><circle cx="214" cy="164" r="7" fill="#e9c46a"/>
+          <circle cx="90" cy="164" r="7" fill="#f2c75c"/><circle cx="214" cy="164" r="7" fill="#f2c75c"/>
           <ellipse cx="120" cy="170" rx="13" ry="7" fill="#e58aa4" opacity=".35"/><ellipse cx="184" cy="170" rx="13" ry="7" fill="#e58aa4" opacity=".35"/>
         </svg></div>
         <div class="drape__sheet" aria-hidden="true"></div>
       </div>
       <div class="drape__copy">
-        <p class="kicker">Pruébalo aquí</p>
+        <p class="tag">Pruébalo aquí</p>
         <h3>La prueba que vas a hacer en casa</h3>
         <div class="drape__btns" role="group" aria-label="Elige un color">
-          <button type="button" class="is-on" data-drape="#d6247c" data-msg="Si eres de colores fríos, el fucsia resalta tu contraste natural.">Fucsia</button>
-          <button type="button" data-drape="#f07a2a" data-msg="Si eres cálida, el naranja te suaviza y te da luz.">Naranja</button>
-          <button type="button" data-drape="#109ca3" data-msg="Color universal: le favorece prácticamente a todo el mundo.">Turquesa</button>
-          <button type="button" data-drape="#6c2b8f" data-msg="Color universal: le favorece prácticamente a todo el mundo.">Morado obispo</button>
+          <button type="button" class="is-on" aria-pressed="true" data-drape="#d6247c" data-msg="Si eres de colores fríos, el fucsia resalta tu contraste natural.">Fucsia</button>
+          <button type="button" aria-pressed="false" data-drape="#f07a2a" data-msg="Si eres cálida, el naranja te suaviza y te da luz.">Naranja</button>
+          <button type="button" aria-pressed="false" data-drape="#109ca3" data-msg="Color universal: le favorece prácticamente a todo el mundo.">Turquesa</button>
+          <button type="button" aria-pressed="false" data-drape="#6c2b8f" data-msg="Color universal: le favorece prácticamente a todo el mundo.">Morado obispo</button>
         </div>
         <p class="drape__msg" aria-live="polite">Si eres de colores fríos, el fucsia resalta tu contraste natural.</p>
         <p class="drape__how">En casa: cara lavada, cabello recogido y dos hojas de color, fucsia y naranja. ¿No es evidente? Luzma te enseña el truco de la selfie. Y te regala de adelanto los dos colores universales: <b>el azul turquesa y el morado obispo.</b></p>
@@ -249,33 +229,44 @@ fbq('track', 'PageView');
   </div>
 </section>
 
-<!-- 7 ESTILOS -->
-<section class="styles">
+<!-- 12 · 7 ESTILOS -->
+<section class="styles" data-page="12" data-tone="dark">
   <div class="wrap">
     <div class="styles__head">
-      <p class="kicker" data-r>Al final descubres cuál eres</p>
-      <h2 data-r>7 estilos. 7 preguntas clave. <em>Una es tuya.</em></h2>
+      <p class="tag" data-r>Test de personalidad · Al final descubres cuál eres</p>
+      <h2 data-split>7 estilos. 7 preguntas clave. <em>Una es tuya.</em></h2>
       <p data-r>Cada estilo tiene su pregunta para cuando terminas de arreglarte. Y su "pero cuidado", para que no te pases. Cuando conoces la tuya, nunca más dudas frente al espejo.</p>
     </div>
     <div class="style-grid">
       <article class="style" data-r style="--c:#c47a9f"><p class="style__k">Petit</p><h3>La dulce</h3><q>¿Me veo dulce?</q><p>Rasgos finos y delicados. Pero cuidado: inocente, nunca boba.</p></article>
       <article class="style" data-r style="--c:#4f6b4a"><p class="style__k">Chico</p><h3>La fresca</h3><q>¿Me veo cómoda?</q><p>Relajada y natural. Pero cuidado: cómoda no significa descuidada.</p></article>
       <article class="style" data-r style="--c:#c27a2e"><p class="style__k">Mediano curvo</p><h3>La original</h3><q>¿Me veo divertida?</q><p>Versátil, con movimiento y asimetrías. Original, nunca ridícula.</p></article>
-      <article class="style" data-r style="--c:#3a1e38"><p class="style__k">Mediano recto</p><h3>La elegante</h3><q>¿Me veo elegante?</q><p>Clásica y minimalista. Elegancia no es rigidez; formal no es anticuada.</p></article>
+      <article class="style" data-r style="--c:#6b4a8a"><p class="style__k">Mediano recto</p><h3>La elegante</h3><q>¿Me veo elegante?</q><p>Clásica y minimalista. Elegancia no es rigidez; formal no es anticuada.</p></article>
       <article class="style" data-r style="--c:#a85d84"><p class="style__k">Grande curvo</p><h3>La femenina</h3><q>¿Me veo súper femenina?</q><p>La única que puede con lo grande y lo extra grande. Sin parecer arbolito de Navidad fuera de temporada.</p></article>
       <article class="style" data-r style="--c:#9a7440"><p class="style__k">Grande recto</p><h3>La chic</h3><q>¿Me veo chic?</q><p>Distinguida y vanguardista. Toma lo más chic de la moda, sin verse falsa.</p></article>
-      <article class="style" data-r style="--c:#221a20"><p class="style__k">Extra grande recto</p><h3>La sofisticada</h3><q>¿Me veo sofisticada?</q><p>Presencia total, pocas piezas y muy buenas. Presencia no es intimidación.</p></article>
-      <article class="style style--you" data-r><p class="style__k">Y tú…</p><h3 class="script">¿Cuál eres?</h3><p>Lo descubres en el capítulo 3, con ejercicios y ejemplos reales.</p></article>
+      <article class="style" data-r style="--c:#5a5a5a"><p class="style__k">Extra grande recto</p><h3>La sofisticada</h3><q>¿Me veo sofisticada?</q><p>Presencia total, pocas piezas y muy buenas. Presencia no es intimidación.</p></article>
+      <article class="style style--you" data-r><p class="style__k">Y tú…</p><h3>¿Cuál eres?</h3><p>Lo descubres en el capítulo 3, con ejercicios y ejemplos reales.</p></article>
     </div>
   </div>
 </section>
 
-<!-- PROPORCIONES -->
-<section class="props">
+<!-- 14 · PROPORCIONES -->
+<section class="props" data-page="14">
   <div class="wrap props__grid">
+    <figure class="vitruvio" aria-hidden="true">
+      <svg viewBox="0 0 400 400" data-draw>
+        <rect x="70" y="70" width="260" height="260"/>
+        <circle cx="200" cy="214" r="150"/>
+        <circle cx="200" cy="98" r="22"/>
+        <path d="M200 120 V250 M200 250 L160 345 M200 250 L240 345 M200 250 L120 330 M200 250 L280 330"/>
+        <path d="M200 150 L70 150 M200 150 L330 150 M200 150 L84 92 M200 150 L316 92"/>
+        <path d="M30 70 H370 M30 330 H370" class="thin"/>
+      </svg>
+      <figcaption>Vitruvio · Leonardo · tú</figcaption>
+    </figure>
     <div class="props__copy">
-      <p class="kicker" data-r>Capítulo 4 · Medidas y proporciones</p>
-      <h2 data-r>Del Hombre de Vitruvio <em>a tu espejo.</em></h2>
+      <p class="tag" data-r>Capítulo 4 · Medidas y proporciones</p>
+      <h2 data-split>Del Hombre de Vitruvio <em>a tu espejo.</em></h2>
       <p data-r>Las bases vienen de Vitruvio, el arquitecto romano, y de Leonardo da Vinci. Pero aquí no es para compararte con un ideal (proporciones perfectas casi nadie tiene, así que no te me asustes). Es para que entiendas tu estructura y aprendas a compensarla visualmente.</p>
       <p data-r>Con una cinta métrica mides tres cosas: <b>estatura, hombros y caderas</b>. El resto, cuello, busto, brazos, cintura, talle, abdomen, glúteos y piernas, lo lees frente al espejo con pruebas que Luzma te enseña paso a paso.</p>
       <ul class="rule-lines">
@@ -283,106 +274,59 @@ fbq('track', 'PageView');
         <li data-r><i class="lh"></i><span><b>Las horizontales</b> ensanchan y dividen.</span></li>
         <li data-r><i class="ld"></i><span><b>Las diagonales</b> reducen volumen y dan movimiento.</span></li>
       </ul>
-      <p class="props__quote" data-r>"Si entiendes esto, puedes equilibrar casi cualquier desproporción."</p>
-    </div>
-    <div class="props__board">
-      <div class="tape" aria-hidden="true"><span></span></div>
-      <div class="shapes" aria-label="Siluetas H, 8, X, O, A, V, I">
-        <div data-r><b>H</b><span>Sin cintura</span></div>
-        <div data-r><b>8</b><span>Proporcionada latina</span></div>
-        <div data-r><b>X</b><span>Proporcionada europea</span></div>
-        <div data-r><b>O</b><span>Llenita</span></div>
-        <div data-r><b>A</b><span>Más cadera</span></div>
-        <div data-r><b>V</b><span>Más hombro</span></div>
-        <div data-r><b>I</b><span>Plana</span></div>
-        <div class="shapes__you" data-r><b>?</b><span>¿Cuál eres tú?</span></div>
+      <div class="shapes" data-r aria-label="Siluetas H, 8, X, O, A, V, I">
+        <span title="Sin cintura">H</span><span title="Proporcionada latina">8</span><span title="Proporcionada europea">X</span><span title="Llenita">O</span><span title="Más cadera">A</span><span title="Más hombro">V</span><span title="Plana">I</span><span class="you" title="¿Cuál eres tú?">?</span>
       </div>
+      <p class="props__quote" data-r>"Si entiendes esto, puedes equilibrar casi cualquier desproporción."</p>
     </div>
   </div>
 </section>
 
-<!-- TEMARIO -->
-<section class="syllabus" id="temario">
-  <div class="wrap syllabus__grid">
-    <div class="syllabus__head">
-      <p class="kicker" data-r>Masterclass completa</p>
-      <h2 data-r>El temario, <em>paso a paso.</em></h2>
+<!-- 16 · CONTENIDO -->
+<section class="toc" id="temario" data-page="16">
+  <div class="wrap toc__grid">
+    <div class="toc__head">
+      <h2 class="toc__word" data-split>Contenido</h2>
       <p data-r>La secuencia está diseñada para que construyas tu best look capítulo por capítulo. Cada uno trae su material de apoyo y tu cuaderno de trabajo para ir anotando tu instructivo.</p>
     </div>
     <div class="chapters">
-      <details class="ch" open data-r>
+      <details class="ch" data-r>
         <summary><span class="ch__n">00</span><span class="ch__t"><b>Bienvenida</b><small>La mentalidad para transformar tu imagen</small></span><span class="ch__plus" aria-hidden="true"></span></summary>
-        <ul>
-          <li>Por qué al transformar tu imagen transformas la manera en que te presentas al mundo.</li>
-          <li>Las reglas del proceso: apagar juicios, activar curiosidad y no compararte.</li>
-          <li>Cómo dejar de pelearte con las partes de ti que te incomodan, y recuperar tu poder.</li>
-        </ul>
+        <ul><li>Por qué al transformar tu imagen transformas la manera en que te presentas al mundo.</li><li>Las reglas del proceso: apagar juicios, activar curiosidad y no compararte.</li><li>Cómo dejar de pelearte con las partes de ti que te incomodan, y recuperar tu poder.</li></ul>
       </details>
       <details class="ch" data-r>
         <summary><span class="ch__n">01</span><span class="ch__t"><b>Líneas predominantes</b><small>Rectas o curvas: lo que tu rostro comunica</small></span><span class="ch__plus" aria-hidden="true"></span></summary>
-        <ul>
-          <li>El test del espejo: cabello recogido y observación sin juicios.</li>
-          <li>Cómo leer tu frente, cejas, nariz, pómulos, labios y mandíbula.</li>
-          <li>Lo que revelan tus hombros y tu muñeca.</li>
-          <li>Los tipos de rostro y por qué el tamaño cambia todo.</li>
-          <li>Qué te conviene realzar, elegancia o feminidad, en ropa, zapatos, bolsos, collares y gafas.</li>
-        </ul>
+        <ul><li>El test del espejo: cabello recogido y observación sin juicios.</li><li>Cómo leer tu frente, cejas, nariz, pómulos, labios y mandíbula.</li><li>Lo que revelan tus hombros y tu muñeca.</li><li>Los tipos de rostro y por qué el tamaño cambia todo.</li><li>Qué te conviene realzar, elegancia o feminidad, en ropa, zapatos, bolsos, collares y gafas.</li></ul>
       </details>
       <details class="ch" data-r>
         <summary><span class="ch__n">02</span><span class="ch__t"><b>Los secretos del estampado</b><small>Tamaños, tipos y saturación</small></span><span class="ch__plus" aria-hidden="true"></span></summary>
-        <ul>
-          <li>Los mitos que te alejan de tu estampado ideal (no, no depende de tu altura ni de tu cuerpo).</li>
-          <li>Secreto 1: tu tamaño, de petit a extra grande, con la prueba de los lunares.</li>
-          <li>Secreto 2: estampados con estructura, con movimiento o con ambos.</li>
-          <li>Secreto 3: la saturación, desde estoperoles y flecos hasta encaje, pedrería y volantes.</li>
-          <li>Cómo enmarcar tu rostro con aretes, collares, solapas, cuellos y cortes de cabello.</li>
-        </ul>
+        <ul><li>Los mitos que te alejan de tu estampado ideal (no, no depende de tu altura ni de tu cuerpo).</li><li>Secreto 1: tu tamaño, de petit a extra grande, con la prueba de los lunares.</li><li>Secreto 2: estampados con estructura, con movimiento o con ambos.</li><li>Secreto 3: la saturación, desde estoperoles y flecos hasta encaje, pedrería y volantes.</li><li>Cómo enmarcar tu rostro con aretes, collares, solapas, cuellos y cortes de cabello.</li></ul>
       </details>
       <details class="ch" data-r>
         <summary><span class="ch__n">03</span><span class="ch__t"><b>Personalidad, estilo y texturas</b><small>Los 7 estilos y tu pregunta clave</small></span><span class="ch__plus" aria-hidden="true"></span></summary>
-        <ul>
-          <li>Personalidad no es lo mismo que estilo: cómo conectar quién eres con lo que usas.</li>
-          <li>Los 7 estilos, del petit al extra grande recto, con su pregunta clave y su "pero cuidado".</li>
-          <li>Qué texturas te favorecen, y cómo vestirte en frío y en calor sin perder estilo.</li>
-          <li>Ejercicios de análisis con ejemplos reales.</li>
-        </ul>
+        <ul><li>Personalidad no es lo mismo que estilo: cómo conectar quién eres con lo que usas.</li><li>Los 7 estilos, del petit al extra grande recto, con su pregunta clave y su "pero cuidado".</li><li>Qué texturas te favorecen, y cómo vestirte en frío y en calor sin perder estilo.</li><li>Ejercicios de análisis con ejemplos reales.</li></ul>
       </details>
       <details class="ch" data-r>
         <summary><span class="ch__n">04</span><span class="ch__t"><b>Medidas y proporciones del cuerpo</b><small>Cinta métrica en mano</small></span><span class="ch__plus" aria-hidden="true"></span></summary>
-        <ul>
-          <li>Cómo medir tu estatura, hombros y caderas con precisión.</li>
-          <li>Cómo leer cuello, busto, brazos, cintura, talle, abdomen, glúteos y piernas frente al espejo.</li>
-          <li>Las siluetas H, 8, X, O, A, V e I.</li>
-          <li>Líneas verticales, horizontales y diagonales: cómo usarlas para equilibrar tu figura.</li>
-        </ul>
+        <ul><li>Cómo medir tu estatura, hombros y caderas con precisión.</li><li>Cómo leer cuello, busto, brazos, cintura, talle, abdomen, glúteos y piernas frente al espejo.</li><li>Las siluetas H, 8, X, O, A, V e I.</li><li>Líneas verticales, horizontales y diagonales: cómo usarlas para equilibrar tu figura.</li></ul>
       </details>
       <details class="ch" data-r>
         <summary><span class="ch__n">05</span><span class="ch__t"><b>La magia del color</b><small>Tu estación y tu gama</small></span><span class="ch__plus" aria-hidden="true"></span></summary>
-        <ul>
-          <li>Cómo el color afecta tu ánimo, tu energía y lo que comunicas.</li>
-          <li>Colores fríos y cálidos, y los dos colores universales.</li>
-          <li>Las 4 estaciones: invierno, verano, otoño y primavera.</li>
-          <li>La prueba del fucsia y el naranja (y el truco de la selfie).</li>
-          <li>Cómo elegir el tinte de tu cabello sin apagarte.</li>
-        </ul>
+        <ul><li>Cómo el color afecta tu ánimo, tu energía y lo que comunicas.</li><li>Colores fríos y cálidos, y los dos colores universales.</li><li>Las 4 estaciones: invierno, verano, otoño y primavera.</li><li>La prueba del fucsia y el naranja (y el truco de la selfie).</li><li>Cómo elegir el tinte de tu cabello sin apagarte.</li></ul>
       </details>
       <details class="ch" data-r>
         <summary><span class="ch__n">✦</span><span class="ch__t"><b>Conclusión: el arte de elegirte</b><small>Tu práctica diaria y la depuración de tu clóset</small></span><span class="ch__plus" aria-hidden="true"></span></summary>
-        <ul>
-          <li>Tu práctica diaria: dos técnicas al día, vayas al súper, al gimnasio o te quedes en casa.</li>
-          <li>El ejercicio de integración: revisa tu guardarropa con la nueva lupa, deja ir lo que no te suma y crea combinaciones nuevas.</li>
-          <li>La regla del 50% para no tirar estampados que sí te funcionan.</li>
-        </ul>
+        <ul><li>Tu práctica diaria: dos técnicas al día, vayas al súper, al gimnasio o te quedes en casa.</li><li>El ejercicio de integración: revisa tu guardarropa con la nueva lupa, deja ir lo que no te suma y crea combinaciones nuevas.</li><li>La regla del 50% para no tirar estampados que sí te funcionan.</li></ul>
       </details>
     </div>
   </div>
 </section>
 
-<!-- MITOS -->
-<section class="myths">
+<!-- 18 · MITOS -->
+<section class="myths" data-page="18">
   <div class="wrap">
-    <p class="kicker" data-r>Vas a dejar atrás</p>
-    <h2 data-r>Los mitos <em>que te enseñaron.</em></h2>
+    <p class="tag" data-r>Vas a dejar atrás</p>
+    <h2 data-split>Mitos <em>vs. realidad.</em></h2>
     <div class="myth-grid">
       <article class="myth" data-r><h3><span>"Si eres alta, puedes usar todo grande."</span></h3><p>Tus tamaños los determina tu rostro en conjunto con tus facciones. No tu altura, no tu cuerpo. Sarah Jessica Parker es bajita y luce estampados enormes.</p></article>
       <article class="myth" data-r><h3><span>"Si eres gordita, nada de estampados llamativos."</span></h3><p>No se trata de ser alta, baja, gordita o delgada. Depende de la construcción de tus líneas y las formas de tu rostro.</p></article>
@@ -394,33 +338,38 @@ fbq('track', 'PageView');
   </div>
 </section>
 
-<!-- CLÓSET Y DINERO + IMAGINA -->
-<section class="closet">
-  <div class="wrap closet__grid">
-    <div>
-      <p class="kicker" data-r>Lo que pasa en tu cartera</p>
-      <h2 data-r>Tu guardarropa debe apoyarte, <em>no sabotearte.</em></h2>
+<!-- 20 · EL CLÓSET -->
+<section class="wardrobe-spread" data-page="20" data-tone="dark">
+  <div class="wardrobe" aria-hidden="true">
+    <div class="rail rail--back" data-closet data-count="12" data-offset="5"></div>
+    <div class="rail rail--front" data-closet data-count="11"></div>
+  </div>
+  <div class="wrap wardrobe-spread__grid">
+    <div class="wardrobe-spread__copy">
+      <p class="tag" data-r>Lo que pasa en tu cartera</p>
+      <h2 data-split>Tu guardarropa debe apoyarte, <em>no sabotearte.</em></h2>
       <p data-r>Cuando todo está dentro de tu estilo y tu gama de colores:</p>
       <ol class="gains">
         <li data-r><b>Necesitas menos ropa</b><span>porque todo combina entre sí. Ahorras.</span></li>
         <li data-r><b>Multiplicas tus opciones</b><span>parece que tienes un clóset mucho más grande.</span></li>
         <li data-r><b>Siempre te ves bien</b><span>aunque tomes cualquier prenda para salir de prisa.</span></li>
       </ol>
-      <p class="closet__note" data-r>Y dejas de comprar la blusa que se queda colgada con etiqueta. Tu inscripción cuesta <b>menos que esa prenda</b>.</p>
     </div>
-    <div class="tag" data-r aria-hidden="true">
-      <span class="tag__hole"></span>
-      <p class="tag__brand">La blusa que nunca usaste</p>
-      <p class="tag__old">Con etiqueta</p>
-      <p class="tag__new"><span>Tu instructivo</span><b data-price>$80 USD</b></p>
+    <div class="pricetag" data-r>
+      <span class="pricetag__hole" aria-hidden="true"></span>
+      <p class="pricetag__k">La blusa que nunca usaste</p>
+      <p class="pricetag__old">Con etiqueta</p>
+      <p class="pricetag__new"><span>Tu instructivo</span><b data-price>$80 USD</b></p>
+      <p class="pricetag__note">Tu inscripción cuesta menos que esa prenda.</p>
     </div>
   </div>
 </section>
 
-<section class="imagine">
+<!-- 22 · IMAGINA -->
+<section class="imagine" data-page="22">
   <div class="wrap">
-    <p class="kicker" data-r>Después de Your Best Look</p>
-    <h2 class="script imagine__title" data-r>Imagina…</h2>
+    <p class="tag" data-r>Después de Your Best Look</p>
+    <h2 class="imagine__title script" data-r>Imagina…</h2>
     <div class="imagine__list">
       <p data-r>Abrir tu clóset, estirar la mano, y que lo que salga vaya perfecto contigo.</p>
       <p data-r>Entrar a una tienda con ojo de águila y saber en dos segundos qué es para ti y qué no.</p>
@@ -431,11 +380,11 @@ fbq('track', 'PageView');
   </div>
 </section>
 
-<!-- PARA QUIÉN -->
-<section class="fit">
+<!-- 24 · PARA QUIÉN -->
+<section class="fit" data-page="24">
   <div class="wrap">
-    <p class="kicker" data-r>Honestidad ante todo</p>
-    <h2 data-r>¿Es <em>para ti?</em></h2>
+    <p class="tag" data-r>Honestidad ante todo</p>
+    <h2 data-split>¿Es <em>para ti?</em></h2>
     <div class="fit__grid">
       <div class="fit__yes" data-r><h3>Es para ti si…</h3><ul>
         <li>Quieres un estilo propio, no copiar el de otras.</li>
@@ -454,21 +403,27 @@ fbq('track', 'PageView');
   </div>
 </section>
 
-<!-- SOBRE LUZMA -->
-<section class="about">
-  <div class="wrap about__grid">
-    <figure class="about__photo" data-r>
-      <img src="assets/img/look-morado.jpg" alt="Luzma, asesora de imagen, con traje morado" width="720" height="900" loading="lazy" data-par="-.05">
-      <figcaption class="script">Luzma</figcaption>
+<!-- 26 · LA ENTREVISTA -->
+<section class="interview" data-page="26" data-tone="pink">
+  <div class="wrap interview__grid">
+    <figure class="interview__star">
+      <span class="interview__disc" aria-hidden="true"></span>
+      <img src="assets/img/entrevista.webp" alt="Luzma con blazer de lunares" width="900" height="1100" loading="lazy">
+      <figcaption>Luzma, en lunares. <span>Asesora de imagen · 64 años</span></figcaption>
     </figure>
-    <div class="about__copy">
-      <p class="kicker" data-r>Tu guía</p>
-      <h2 data-r>Hola, <em>soy Luzma.</em></h2>
-      <p data-r>Tengo 64 años. Estudié diseño gráfico en la Universidad Iberoamericana, y desde hace más de tres décadas me dedico a crear belleza a través de la imagen personal.</p>
-      <p data-r>Cuando empecé, en México había muy poquita información sobre esto, así que complementé mi formación en Nueva York y Milán. Pero mi mejor escuela ha sido la experiencia: estas técnicas las he aplicado infinidad de veces, en mujeres de diferentes edades y contextos. Y con todas han funcionado.</p>
-      <p data-r>En todas descubrí lo mismo: nadie tiene nada que corregir. Por eso no te voy a decir qué ponerte. Te voy a dar las herramientas para que lo descubras tú, y ya no necesites a nadie.</p>
+    <div class="interview__copy">
+      <p class="tag" data-r>La entrevista</p>
+      <h2 data-split>Hola, <em>soy Luzma.</em></h2>
+      <dl class="qa">
+        <dt data-r>¿Quién eres?</dt>
+        <dd data-r>Tengo 64 años. Estudié diseño gráfico en la Universidad Iberoamericana, y desde hace más de tres décadas me dedico a crear belleza a través de la imagen personal.</dd>
+        <dt data-r>¿Dónde aprendiste?</dt>
+        <dd data-r>Cuando empecé, en México había muy poquita información sobre esto, así que complementé mi formación en Nueva York y Milán. Pero mi mejor escuela ha sido la experiencia: estas técnicas las he aplicado infinidad de veces, en mujeres de diferentes edades y contextos. Y con todas han funcionado.</dd>
+        <dt data-r>¿Qué descubriste?</dt>
+        <dd data-r class="qa__big">En todas descubrí lo mismo: <em>nadie tiene nada que corregir.</em> Por eso no te voy a decir qué ponerte. Te voy a dar las herramientas para que lo descubras tú, y ya no necesites a nadie.</dd>
+      </dl>
       <dl class="creds" data-r>
-        <div><dt data-count="30">30</dt><dd>años de experiencia</dd></div>
+        <div><dt><span data-count="30">30</span>+</dt><dd>años de experiencia</dd></div>
         <div><dt>Ibero</dt><dd>diseño gráfico</dd></div>
         <div><dt>NY · Milán</dt><dd>formación</dd></div>
       </dl>
@@ -476,12 +431,12 @@ fbq('track', 'PageView');
   </div>
 </section>
 
-<!-- OFERTA -->
-<section class="offer" id="inscribete">
+<!-- 28 · LA OFERTA -->
+<section class="offer" id="inscribete" data-page="28" data-tone="dark">
   <div class="wrap offer__grid">
     <div class="offer__intro">
-      <p class="kicker" data-r>Tu inscripción</p>
-      <h2 data-r>Empieza hoy <em>tu best look.</em></h2>
+      <p class="tag" data-r>Tu inscripción</p>
+      <h2 data-split>Tu edición completa, <em>para siempre.</em></h2>
       <p data-r>Treinta años de método, completo y paso a paso. Lo que en una asesoría de imagen personalizada pagarías varias veces, aquí es tuyo para siempre.</p>
       <div class="guarantee" data-r>
         <div class="seal"><svg viewBox="0 0 120 120" aria-hidden="true"><defs><path id="seal" d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"/></defs><text><textPath href="#seal">garantía total · sin preguntas · garantía total · sin preguntas ·</textPath></text></svg><b><span data-guarantee>7</span><small>días</small></b></div>
@@ -490,8 +445,8 @@ fbq('track', 'PageView');
     </div>
     <div class="ticket" data-r>
       <div class="ticket__top">
-        <img src="assets/logo.png" alt="" width="72" height="72">
-        <div><h3>Your Best Look</h3><p>Masterclass completa de imagen y estilo</p></div>
+        <p class="ticket__mh">Your Best Look</p>
+        <p class="ticket__ed">Edición Nº 01 · Masterclass completa de imagen y estilo</p>
       </div>
       <ul class="stack">
         <li><b>Bienvenida + 5 capítulos + Conclusión</b><span>Líneas, estampados, estilo y texturas, proporciones y color.</span></li>
@@ -504,20 +459,20 @@ fbq('track', 'PageView');
       </ul>
       <div class="ticket__cut" aria-hidden="true"></div>
       <div class="price"><span class="was">Antes <s data-price-before>$89 USD</s></span><span class="amt" data-price>$80 USD</span><span class="note">Pago único · Acceso inmediato</span></div>
-      <a class="btn btn--lg btn--block" data-checkout href="#">Quiero descubrir mi Best Look <span class="btn__arrow" aria-hidden="true">→</span></a>
-      <p class="micro">Pago seguro con Hotmart · Tarjeta, PayPal y más</p>
+      <a class="btn btn--block" data-checkout href="#">Quiero descubrir mi Best Look <span class="btn__arrow" aria-hidden="true">→</span></a>
+      <div class="ticket__foot"><i class="barcode__bars" aria-hidden="true"></i><span>Pago seguro con Hotmart · Tarjeta, PayPal y más</span></div>
     </div>
   </div>
 </section>
 
-<!-- FAQ -->
-<section class="faq">
-  <div class="wrap faq__grid">
-    <div>
-      <p class="kicker" data-r>Dudas</p>
-      <h2 data-r>Preguntas <em>frecuentes.</em></h2>
+<!-- 30 · CARTAS -->
+<section class="letters" data-page="30">
+  <div class="wrap letters__grid">
+    <div class="letters__head">
+      <p class="tag" data-r>Preguntas frecuentes</p>
+      <h2 data-split>Cartas de <em>las lectoras.</em></h2>
     </div>
-    <div class="faq__list">
+    <div class="letters__list">
       <details data-r><summary>No sé nada de moda. ¿Me va a servir?</summary><p>Sí. Your Best Look no es un curso de moda: es aprender a leerte. Vas paso a paso, con un espejo, tu cuaderno de trabajo y tu material de apoyo. No necesitas experiencia previa.</p></details>
       <details data-r><summary>¿Funciona para cualquier edad o tipo de cuerpo?</summary><p>Sí. Tu construcción natural permanece más allá del tiempo, incluso cuando tu peso cambia. Estas técnicas se han aplicado en mujeres de diferentes edades y contextos.</p></details>
       <details data-r><summary>Me tiño el cabello. ¿Cómo sé mi estación de color?</summary><p>Tu colorido natural se lee con tu piel, tus ojos y tu color de cabello de nacimiento. En el capítulo 5 haces la prueba del fucsia y el naranja con la cara lavada, y aprendes a elegir un tinte que no te apague.</p></details>
@@ -530,25 +485,25 @@ fbq('track', 'PageView');
   </div>
 </section>
 
-<!-- CTA FINAL -->
-<section class="final">
-  <div class="wardrobe wardrobe--final" aria-hidden="true"><div class="rail rail--final" data-closet data-count="12" data-offset="3"></div></div>
-  <div class="wrap final__inner">
-    <h2 data-r>Una copia nunca superará al original.</h2>
-    <p class="script final__script" data-r>Y tú eres el original.</p>
+<!-- CONTRAPORTADA -->
+<section class="back" data-page="32" data-tone="pink">
+  <h2 class="masthead masthead--back" aria-hidden="true"><span class="mh">Original</span></h2>
+  <div class="wrap back__inner">
+    <p class="back__line" data-split>Una copia nunca superará al original.</p>
+    <p class="script back__script" data-r>Y tú eres el original.</p>
     <p data-r>El primer paso ya lo diste: llegaste hasta aquí. El siguiente es atreverte. Porque cambiar es evolucionar, y es un proceso bien bonito.</p>
-    <div data-r>
-      <a class="btn btn--lg btn--light" data-checkout href="#">Sí, quiero descubrir mi Best Look <span class="btn__arrow" aria-hidden="true">→</span></a>
-      <p class="final__micro"><s data-price-before>$89</s> <b data-price>$80 USD</b> · Acceso inmediato · Garantía de <span data-guarantee>7</span> días</p>
+    <div class="back__buy" data-r>
+      <a class="btn" data-checkout href="#">Sí, quiero descubrir mi Best Look <span class="btn__arrow" aria-hidden="true">→</span></a>
+      <div class="barcode barcode--light"><i aria-hidden="true"></i><p><s data-price-before>$89</s> <b data-price>$80 USD</b><span>Acceso inmediato · Garantía de <span data-guarantee>7</span> días</span></p></div>
     </div>
   </div>
 </section>
 
 <footer class="footer">
   <div class="wrap footer__inner">
-    <img src="assets/logo.png" alt="Your Best Look by Luzma" width="56" height="56">
+    <img src="assets/logo.png" alt="Your Best Look by Luzma" width="56" height="56" loading="lazy">
     <p>La belleza se construye equilibrando detalles.</p>
-    <p class="footer__c">© Your Best Look by Luzma</p>
+    <p class="footer__c">© Your Best Look by Luzma · Edición Nº 01</p>
   </div>
 </footer>
 
@@ -559,7 +514,10 @@ fbq('track', 'PageView');
 
 <script src="assets/config.js?v=6"></script>
 <script src="assets/app.js?v=6"></script>
-<script src="assets/closet.js?v=1"></script>
-<script src="assets/motion.js?v=2"></script>
+<script src="assets/closet.js?v=2"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/SplitText.min.js" defer></script>
+<script src="assets/issue.js?v=1" defer></script>
 </body>
 </html>
