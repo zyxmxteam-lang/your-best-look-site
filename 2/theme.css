@@ -170,7 +170,6 @@ h2 em{display:block;width:fit-content}
 .hero__vsl{margin-left:0}
 .hero__vsl .video{width:min(292px,64vw,calc((100svh - 300px) * .5625))}
 .p1{right:-2%;top:56px;width:47%;height:80%}
-.p5{right:-3%;bottom:6%;width:21%;height:34%;background:url(../shared/img/luzma-tela.webp) center/cover;rotate:7deg}
 .d1{right:37%}
 .note{right:35%;top:7%;z-index:6}
 .scrib{right:33%;top:13%}
@@ -191,7 +190,6 @@ h2 em{display:block;width:fit-content}
   .hero__media{min-height:0;padding:34px 0 46px}
   .hero__vsl .video{width:min(250px,62vw)}
   .p1{top:auto;bottom:6px;width:104%;height:540px;right:-6%}
-  .p5{right:-7%;bottom:7%;width:34%;height:30%}
   .c1{top:auto;bottom:520px;right:5%}
   .burst{right:4%;bottom:330px}
   .s1,.c2{display:none}

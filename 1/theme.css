@@ -155,7 +155,6 @@ h2 em{display:block}
 .hero__deco .g-tri{right:47%;top:110px}
 .hero__deco .g-ring{right:39%;top:52%}
 .hero__deco .g-half{right:34%}
-.g-tela{right:0;bottom:0;width:min(280px,20vw);aspect-ratio:1;border-radius:100% 0 0 0;background:url(../shared/img/luzma-tela.webp) center/cover}
 .hero__deco .g-dots{right:3%;bottom:44%}
 .pain__list li:last-child{grid-column:1/-1}
 .reverse__a p,.idea__grid>p{font-size:clamp(18px,1.5vw,21px);line-height:1.5}
@@ -177,7 +176,6 @@ h2 em{display:block}
   .hero__vsl .video{width:min(250px,62vw)}
   .hero__deco .g-circle{top:auto;bottom:40px;right:-14%;width:96vw}
   .hero__deco .g-half{left:-8%;right:auto;width:44vw}
-  .g-tela{width:30vw}
   .hero__deco .g-dots{top:auto;bottom:220px;right:5%}
   .hero__deco .g-bar,.hero__deco .g-tri,.hero__deco .g-ring{display:none}
   .fit__no::after{display:none}
