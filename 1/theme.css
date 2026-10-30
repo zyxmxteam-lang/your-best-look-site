@@ -103,7 +103,6 @@ h1 em,h2 em{color:var(--malva)}
 .fit__yes li::before{color:var(--oro)}
 .luzma__photo{position:relative;border-radius:50%;aspect-ratio:1;overflow:visible;background:var(--oro)}
 .luzma__photo img{border-radius:50%;width:90%;height:90%;margin:5%}
-.luzma__photo::after{content:"";position:absolute;left:-8%;bottom:-6%;width:46%;aspect-ratio:2/1;border-radius:999px 999px 0 0;background:var(--malva);z-index:2}
 .creds dt{color:var(--malva);font-size:clamp(22px,2.2vw,32px)}
 .seal{background:var(--oro);border-radius:50%;box-shadow:none}
 .card{border-radius:0;box-shadow:14px 14px 0 var(--malva)}
@@ -169,7 +168,6 @@ h2 em{display:block}
 .luzma__photo{background:var(--oro)}
 .luzma__photo img{object-position:50% 8%}
 .luzma__photo::before{content:"";position:absolute;right:-5%;top:2%;width:26%;aspect-ratio:1;border-radius:50%;background:var(--indigo);z-index:2}
-.luzma__photo::after{background:url(../shared/img/luzma-tela.webp) center/cover}
 .luzma__copy p{font-size:18px;line-height:1.55}
 @media(max-width:860px){
   .hero__media{min-height:0;padding:24px 0 40px}
