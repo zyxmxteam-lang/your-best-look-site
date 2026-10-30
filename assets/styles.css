@@ -181,6 +181,11 @@ em.s{font-family:var(--script);font-style:normal;font-weight:400;color:var(--mau
 .final .lead{color:#dcc3cf;margin:0 auto 36px}
 .final .micro{color:#dcc3cf}
 footer{background:#2a1528;color:#a98da0;font-size:14px;text-align:center;padding:30px 20px}
+.zyx{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:8px 12px;margin-top:14px;font-size:13px;line-height:1.3}
+.zyx b{font-weight:600}
+.zyx a{display:inline-flex;align-items:center;min-height:32px;padding:0 13px;border:1px solid currentColor;border-radius:999px;color:inherit;font-size:12px;font-weight:600;text-decoration:none;white-space:nowrap;transition:background .2s}
+.zyx a:hover{background:rgba(255,255,255,.12)}
+@media(max-width:899px){footer{padding-bottom:calc(96px + env(safe-area-inset-bottom))}}
 
 /* Barra fija en móvil */
 .sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:50;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:rgba(251,247,243,.96);backdrop-filter:blur(8px);border-top:1px solid var(--line);display:flex;align-items:center;gap:14px;transform:translateY(110%);transition:transform .3s}
@@ -210,7 +215,7 @@ footer{background:#2a1528;color:#a98da0;font-size:14px;text-align:center;padding
 @keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
 .gate-open .offer-card{color:var(--ink);margin-top:0}
 .gate-open .lead{color:#dcc3cf;margin:0 auto 28px}
-.ads footer{background:transparent}
+.ads footer{background:transparent;padding-bottom:calc(96px + env(safe-area-inset-bottom))}
 
 @media(max-width:760px){
   body{font-size:17px}
