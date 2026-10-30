@@ -95,8 +95,9 @@
       cover.type = "button";
       cover.className = "video-ph video-ph--cover";
       cover.innerHTML = '<span class="video-ph__play" aria-hidden="true"></span><p>Ver la clase</p>';
-      if (C.VIDEO_POSTER) {
-        cover.style.background = "linear-gradient(180deg,rgba(20,10,18,0) 45%,rgba(20,10,18,.8)),url('" + C.VIDEO_POSTER + "') center 30%/cover";
+      var poster = box.getAttribute("data-poster") || C.VIDEO_POSTER;
+      if (poster) {
+        cover.style.background = "linear-gradient(180deg,rgba(20,10,18,0) 45%,rgba(20,10,18,.8)),url('" + poster + "') center 30%/cover";
       }
       cover.onclick = function () {
         track("VideoPlay", { page: page }, true);
