@@ -449,3 +449,73 @@ b,strong{font-weight:600}
 .btn s{text-decoration-color:rgba(255,255,255,.85);opacity:.85}
 .was-inline{color:var(--muted);margin-right:4px}
 @media(max-width:480px){.sticky-g{display:none}}
+
+/* ===================== v12: cambios de Luzma (nov) ===================== */
+/* Método: 8 capítulos + remate a lo ancho */
+.vars{grid-template-columns:repeat(4,minmax(0,1fr))}
+.var--result{grid-column:1/-1;display:grid;grid-template-columns:auto auto 1fr;column-gap:28px;align-items:center;padding:26px 34px}
+.var--result .n{grid-row:1/3;font-size:34px;line-height:1}
+.var--result .glyph{grid-row:1/3;margin:0;height:auto}
+.var--result h3{align-self:end;margin:0 0 2px;font-size:32px}
+.var--result p{align-self:start;font-size:18px}
+.g-style{position:relative;width:72px;height:48px}
+.g-style span{position:absolute;display:block;width:32px;height:32px}
+.g-style span:nth-child(1){left:10px;top:8px;border:3px solid var(--plum);transform:rotate(45deg);border-radius:4px}
+.g-style span:nth-child(2){left:30px;top:8px;border-radius:50%;background:var(--mauve);opacity:.85}
+
+/* 7 estilos: texto de apertura y tarjeta final */
+.styles-intro{font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(24px,3vw,32px);line-height:1.25;color:var(--mauve-d);max-width:700px;margin:0 auto 26px;padding-bottom:22px;position:relative}
+.styles-intro::after{content:"✦";position:absolute;left:50%;bottom:-6px;transform:translateX(-50%);font-style:normal;font-size:13px;color:var(--mauve)}
+.style-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+.style q{display:block;line-height:1.25}
+.style .k{display:block;line-height:1.35}
+.style--you{background:var(--plum);color:#fff}
+.style--you::after{background:var(--mauve);opacity:.35}
+.style--you .k{color:var(--mauve)}
+.style--you h3{color:#fff;font-size:30px}
+.style--you p{color:#dcc3cf;font-size:16px}
+
+@media(max-width:1000px){
+  .vars,.style-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+
+/* Sobre Luzma: 30+ arriba; Ibero y NY · Milán abajo, centrados */
+.creds{display:grid;grid-template-columns:repeat(2,minmax(0,190px));justify-content:center;gap:14px 14px;margin-top:26px;text-align:center}
+.creds div{border:1px solid rgba(255,255,255,.2);border-radius:16px;padding:12px 22px;min-width:150px}
+.creds .creds__top{grid-column:1/-1;justify-self:center}
+.creds dt{font-family:var(--serif);font-size:32px;font-weight:600;line-height:1.05;color:#fff}
+.creds dd{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#dcc3cf;margin-top:2px}
+
+/* Garantía: sello centrado */
+.guarantee{flex-direction:column;text-align:center;gap:12px}
+
+/* Precio anterior: raya delgada en diagonal para que se lea bien el 89 */
+.price .was s,.btn s,.was-inline{text-decoration:none;position:relative;display:inline-block;white-space:nowrap}
+.price .was s,.btn s,.was-inline{--strike:var(--mauve)}
+.price .was s::after,.btn s::after,.was-inline::after{content:"";position:absolute;left:-3px;right:-3px;top:18%;bottom:18%;background:linear-gradient(to bottom right,transparent calc(50% - 1px),var(--strike) calc(50% - .7px),var(--strike) calc(50% + .7px),transparent calc(50% + 1px));pointer-events:none}
+.price .was{font-size:20px}
+.price .was s{font-size:24px;font-weight:500;color:var(--ink);margin-left:4px}
+.btn s{opacity:1;font-size:16px;font-weight:500;margin:0 2px}
+.btn s{--strike:var(--plum)}
+.was-inline{font-size:16px;font-weight:500;color:var(--ink);margin-right:6px}
+
+/* Cierre: "un proceso hermoso" */
+.final .lead .hl{color:#fff;font-weight:600;background:linear-gradient(transparent 62%,rgba(196,122,159,.55) 62%);padding:0 2px}
+
+@media(max-width:760px){
+  .var--result{padding:20px 18px;column-gap:14px}
+  .var--result .n{font-size:26px}
+  .var--result .glyph{transform:scale(.8)}
+  .var--result h3{font-size:24px}
+  .var--result p{font-size:15px}
+  .style--you h3{font-size:24px}
+  .style--you p{font-size:14px}
+  .styles-intro{font-size:24px}
+  .creds div{padding:10px 14px;min-width:0}
+  .creds dt{font-size:26px}
+  .creds dd{font-size:11px}
+}
+@media(max-width:360px){
+  .vars,.style-grid{grid-template-columns:minmax(0,1fr)}
+}
+.offer-card h3{text-wrap:balance}

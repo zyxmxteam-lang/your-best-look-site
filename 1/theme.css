@@ -155,7 +155,6 @@ h2 em{display:block}
 .hero__deco .g-ring{right:39%;top:52%}
 .hero__deco .g-half{right:34%}
 .hero__deco .g-dots{right:3%;bottom:44%}
-.pain__list li:last-child{grid-column:1/-1}
 .reverse__a p,.idea__grid>p{font-size:clamp(18px,1.5vw,21px);line-height:1.5}
 .tools__list li::after{right:-34px;top:-34px;bottom:auto;width:104px}
 .tools__list li:nth-child(4n+2)::after{right:-26px;top:-26px;width:78px}
@@ -181,7 +180,6 @@ h2 em{display:block}
   .gq2,.gr2,.gt2{display:none}
   .gh2{width:150px;left:-40px}
   .gc2{opacity:.14}
-  .pain__list li:last-child{grid-column:auto}
   .luzma__photo{width:min(330px,88vw);margin-inline:auto}
   .luzma__copy h2 em{display:inline}
 }
