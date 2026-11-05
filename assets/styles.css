@@ -519,3 +519,6 @@ b,strong{font-weight:600}
   .vars,.style-grid{grid-template-columns:minmax(0,1fr)}
 }
 .offer-card h3{text-wrap:balance}
+/* Foto de Luzma en lugar del monograma */
+.monogram--foto{overflow:hidden;padding:0}
+.monogram--foto img{width:100%;height:100%;object-fit:cover;object-position:50% 18%;display:block}
