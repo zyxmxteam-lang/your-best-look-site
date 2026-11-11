@@ -362,3 +362,8 @@ html:has(body.art),body.art{overflow-x:clip}
 .art .hero__price s,.art .sticky-cta s{font-size:1.08em}
 .art .final__em{font-weight:700;font-size:1.12em;white-space:nowrap;background:linear-gradient(transparent 62%,var(--gold) 62% 92%,transparent 92%);padding:0 .1em}
 @media(max-width:600px){.art .guarantee{align-items:center}.art .guarantee p{text-align:center}.art .tools__sum{grid-template-columns:1fr}.art .tools__sum .n{grid-row:auto}}
+/* El botón del inicio va después del VSL en celular; en escritorio sigue bajo el texto */
+.hero__grid{grid-template-areas:"brand brand" "text media" "cta media"}
+.hero__text{align-self:end}
+.hero__cta{grid-area:cta;align-self:start;margin-top:6px;animation:heroIn 1s var(--ease) .4s both}
+@media(max-width:860px){.hero__grid{grid-template-areas:"brand" "text" "media" "cta"}.hero__cta{margin-top:4px}}
