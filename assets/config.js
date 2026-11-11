@@ -11,9 +11,9 @@ window.YBL = {
   //  - Embed de Vimeo (https://player.vimeo.com/video/ID): detecta el segundo exacto con su API.
   //  - Embed de YouTube (https://www.youtube.com/embed/ID): el botón aparece por tiempo desde el play.
   // Vacío = muestra un placeholder de "Video próximamente".
-  VIDEO_URL: "https://player.vimeo.com/video/1240063100?badge=0&autopause=0&app_id=58479",
-  // Portada del video antes de darle play (VSL Luzma V5 Bold, 6:25)
-  VIDEO_POSTER: "https://i.vimeocdn.com/video/2218288031-8af60f4f9aa782734e05bd6ea64a5b7d304849e23bd68245b5d238b19fccd2e0-d_720x1280?region=us",
+  VIDEO_URL: "https://player.vimeo.com/video/1245707054?badge=0&autopause=0&app_id=58479&title=0&byline=0&portrait=0&loop=1&dnt=1",
+  // Portada del video antes de darle play (VSL LUZMA OFF, 6:22)
+  VIDEO_POSTER: "https://i.vimeocdn.com/video/2224912230-84b02c1195dae2d28d66b0c0c60c7b01d8e6175d8708c679937eba9ea123b0c5-d_720x1280?region=us",
 
   // Segundo del video en el que aparece el botón de compra en la landing de ads.
   // En el guion, la oferta empieza en 5:50 (350 s).
