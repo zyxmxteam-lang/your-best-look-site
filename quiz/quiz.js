@@ -176,7 +176,8 @@
         "<p>" + I.p + '</p><button class="btn qz-next" type="button">Seguir <i class="btn__arrow">→</i></button></div>';
     } else {
       var grid = s.o.length > 4 && !s.dots ? " qz-opts--grid" : "";
-      h = '<div class="qz-card"><p class="qz-step">Pregunta ' + qIndex() + " de " + questions() + "</p><h2>" + s.t + "</h2>" + (s.h ? '<p class="qz-help">' + s.h + "</p>" : "") +
+      var help = s.id === "dolor" && ans.edad ? "Perfecto: ajustamos tu resultado a tus " + ans.edad.label.replace(" o más", " y más") + " años. " + s.h : s.h;
+      h = '<div class="qz-card"><p class="qz-step">Pregunta ' + qIndex() + " de " + questions() + "</p><h2>" + s.t + "</h2>" + (help ? '<p class="qz-help">' + help + "</p>" : "") +
         '<div class="qz-opts' + grid + '" role="radiogroup">' + s.o.map(function (o, k) {
           var ico = s.dots ? dots(5, k + 1) : s.lines ? lineIcon(o[1]) : s.swatch ? swatch(o[2]) : "";
           var sub = s.swatch ? "" : o[2] ? "<small>" + o[2] + "</small>" : "";
@@ -229,13 +230,13 @@
   function analyze() {
     bar.style.width = "100%";
     back.hidden = true;
-    var steps = ["Midiendo tu talla de rostro", "Leyendo tus líneas", "Cruzando con los 7 estilos", "Buscando tu estación de color"];
+    var steps = ["Midiendo tu talla de rostro", "Leyendo tus líneas rectas y curvas", "Cruzando tus respuestas con los 7 estilos", "Eligiendo tu estación de color", "Armando lo que te hace brillar"];
     stage.innerHTML = '<div class="qz-card qz-load"><p class="kicker">Un momento</p><h2>Preparando tu resultado…</h2><ol>' + steps.map(function (t) { return "<li>" + t + "</li>"; }).join("") + "</ol></div>";
     var li = stage.querySelectorAll("li"), n = 0;
     var t = setInterval(function () {
       if (n < li.length) li[n++].classList.add("ok");
-      else { clearInterval(t); show(result()); }
-    }, 650);
+      else { clearInterval(t); var r = result(); stage.querySelector("h2").textContent = "¡Listo! Eres " + STYLES[r.id].name.replace("La ", "la ") + "."; setTimeout(function () { show(r); }, 1100); }
+    }, 1000);
   }
 
   function show(r) {
@@ -266,9 +267,10 @@
     var qs = window.location.search.replace(/^\?/, "");
     var url = (C.HOTMART_URL || "#") + "?" + (qs ? qs + "&" : "") + "sck=quiz_" + r.id;
     document.querySelectorAll("[data-checkout]").forEach(function (a) { a.setAttribute("href", url); });
+    $("#r-btn").textContent = "Quiero aprender a vestir como " + S.name.replace("La ", "la ");
 
     // Compartir con una amiga por WhatsApp
-    var share = "Hice el quiz de Luzma y salí " + S.name + " de " + E.name + ". ¿Tú cuál eres? " + location.origin + location.pathname;
+    var share = "Descubrí que soy " + S.name.replace("La ", "la ") + " de " + E.name + ". Haz el quiz de Luzma, es gratis y dura 2 minutos: " + location.origin + location.pathname;
     $("#r-share").setAttribute("href", "https://wa.me/?text=" + encodeURIComponent(share));
 
     app.hidden = true;
