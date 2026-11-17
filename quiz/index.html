@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '2261263981474725');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2261263981474725&ev=PageView&noscript=1"></noscript>
+<!-- End Meta Pixel -->
+<title>¿Cuál de los 7 estilos eres? · Quiz de Luzma | Your Best Look</title>
+<meta name="description" content="Quiz gratis de 2 minutos con el método de Luzma: descubre tu talla de rostro, tu estilo entre 7 y tu estación de color.">
+<meta property="og:title" content="¿Cuál de los 7 estilos eres?">
+<meta property="og:description" content="Quiz gratis de 2 minutos con el método de Luzma: tu talla de rostro, tu estilo y tu estación de color.">
+<meta property="og:image" content="https://yourbestlookbyluzma.com/assets/og.jpg">
+<link rel="icon" type="image/png" href="../shared/favicon.png">
+<meta name="theme-color" content="#efe7da">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Karla:wght@400;500;700&family=Permanent+Marker&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/base.css?v=4">
+<link rel="stylesheet" href="../theme.css?v=1">
+<link rel="stylesheet" href="quiz.css?v=1">
+</head>
+<body class="landing t-v11 art qz">
+
+<header class="qz-top">
+  <a class="qz-brand" href="../"><img src="../shared/logo.png" alt="Your Best Look by Luzma" width="44" height="44"><span>Your Best Look <em>by Luzma</em></span></a>
+  <button class="qz-back" id="back" type="button" hidden aria-label="Pregunta anterior">← Atrás</button>
+</header>
+<div class="qz-progress" aria-hidden="true"><i id="bar"></i></div>
+
+<main>
+  <!-- Portada -->
+  <section class="qz-intro" id="intro">
+    <div class="wrap">
+      <p class="kicker">Quiz gratis · 2 minutos</p>
+      <h1><span class="rn r1">¿Cuál</span> <span class="rn r2">de los</span><br><span class="rn r3">7 estilos</span> <span class="rn r4">eres?</span></h1>
+      <p class="script qz-script">Tu rostro ya sabe.</p>
+      <p class="qz-lead">Responde 10 preguntas frente al espejo y descubre tu <b>talla de rostro</b>, cuál de los <b>7 estilos</b> eres y tu <b>estación de color</b>. Con el método de Luzma, más de 30 años creando belleza.</p>
+      <ul class="qz-chips"><li>Petit → extra grande</li><li>Rectas o curvas</li><li>Prueba fucsia o naranja</li></ul>
+      <button class="btn qz-cta" type="button" data-start>Empezar mi quiz <i class="btn__arrow">→</i></button>
+      <p class="qz-note">Sin registro · Tu resultado al terminar · Ten un espejo cerca</p>
+      <div class="qz-guide"><img src="../shared/img/luzma-rostro.webp" alt="Luzma" width="64" height="64"><p><b>Luzma</b> · 64 años, diseñadora por la Ibero, formada en Nueva York y Milán. Más de tres décadas creando belleza a través de la imagen personal.</p></div>
+    </div>
+  </section>
+
+  <!-- Preguntas -->
+  <section class="qz-app" id="quiz" hidden aria-live="polite">
+    <div class="wrap"><div id="stage" class="qz-stage"></div></div>
+  </section>
+
+  <!-- Resultado -->
+  <section class="qz-res" id="resultado" hidden>
+    <div class="wrap">
+      <div class="qz-hero" id="r-card">
+        <p class="kicker">Tu resultado</p>
+        <p class="qz-eres">Eres</p>
+        <h1 id="r-style">La elegante</h1>
+        <p class="script qz-rq" id="r-q"></p>
+        <p class="qz-tag" id="r-tag"></p>
+        <p class="qz-desc" id="r-desc"></p>
+        <p class="qz-second" id="r-second" hidden>Y por tu personalidad, también tienes un lado de <b></b> que quiere salir.</p>
+      </div>
+
+      <div class="qz-block">
+        <h2>Tu talla de <em>rostro.</em></h2>
+        <p>Así como tienes talla de ropa, también tienes otras tallas. La tuya decide el tamaño de tus estampados, aretes, collares y hasta de tu corte de cabello.</p>
+        <div class="qz-sizes qz-sizes--res" id="r-size" aria-label="Tu talla de rostro"></div>
+      </div>
+
+      <div class="qz-grid2">
+        <div class="qz-list qz-list--si"><h3>Lo que te hace brillar</h3><ul id="r-si"></ul></div>
+        <div class="qz-list qz-list--no"><h3>Lo que te apaga</h3><ul id="r-no"></ul></div>
+      </div>
+
+      <div class="qz-season">
+        <div class="qz-sw5" id="r-sw" aria-hidden="true"></div>
+        <div><p class="qz-k" id="r-estk"></p><h3>Tu estación probable: <span id="r-est"></span></h3><p id="r-estd"></p></div>
+      </div>
+
+      <div class="qz-why">
+        <p class="kicker">Lo que me dijiste</p>
+        <p id="r-pain"></p>
+        <p><span id="r-age"></span> Y para <b id="r-meta"></b>, lo que sigue es confirmar tu resultado frente al espejo.</p>
+      </div>
+
+      <div class="qz-offer" data-tone="dark">
+        <div class="qz-offer__txt">
+          <p class="kicker">Tu siguiente paso</p>
+          <h2>Esto es tu primera lectura. <em>En la masterclass, tu instructivo completo.</em></h2>
+          <p>Un quiz te da una pista; Your Best Look te enseña a confirmarla tú misma, con tu espejo, tu cuaderno de trabajo y 7 capítulos paso a paso: tus líneas, tus tamaños, tus estampados, tu saturación, tus texturas, tu estilo, tus proporciones y tus colores.</p>
+          <ul class="qz-inc"><li>Tu masterclass completa</li><li>Tu propio cuaderno de trabajo</li><li>Tu estación de color con la prueba fucsia y naranja</li><li>¡Tu curso para siempre!</li></ul>
+          <div class="qz-price"><span class="was">Antes <s data-price-before>$89 USD</s></span><span class="amt" data-price>$80 USD</span><span class="qz-pnote">Pago único · Acceso inmediato · Garantía de <span data-guarantee>7</span> días</span></div>
+          <a class="btn btn--block" data-checkout href="#"><span>Quiero descubrir My Best Look</span><i class="btn__arrow" aria-hidden="true">→</i></a>
+          <p class="qz-micro">Pago seguro con Hotmart · Si en 7 días sientes que no es para ti, pides tu reembolso completo.</p>
+        </div>
+        <div class="qz-offer__vid"><p class="qz-vk">▶ La clase de Luzma · 6 min</p><div class="video" data-video></div></div>
+      </div>
+
+      <div class="qz-end">
+        <a class="qz-share" id="r-share" href="#" target="_blank" rel="noopener">Compartir mi resultado por WhatsApp</a>
+        <button class="qz-again" id="r-again" type="button">Volver a hacer el quiz</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer"><div class="wrap"><img src="../shared/logo.png" alt="" width="48" height="48" loading="lazy"><p>La belleza se construye equilibrando detalles.</p><p class="footer__c">© Your Best Look by Luzma</p><div class="zyx"><span>Hecho por <b>ZYX</b>, agencia de marketing</span><a href="https://zyx.mx" target="_blank" rel="noopener">Visitar zyx.mx</a></div></div></footer>
+
+<script src="../assets/config.js?v=6"></script>
+<script src="../assets/app.js"></script>
+<script src="quiz.js?v=1"></script>
+</body>
+</html>
