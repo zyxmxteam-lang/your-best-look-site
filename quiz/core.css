@@ -1,0 +1,64 @@
+/* Estructura común de las versiones del quiz (2–5). Cada página pone su propio diseño encima. */
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;-webkit-font-smoothing:antialiased;overflow-x:clip}
+img{max-width:100%;display:block}
+[hidden]{display:none!important}
+button{font:inherit;color:inherit}
+.wrap{width:100%;max-width:760px;margin:0 auto;padding:0 20px}
+.qz-back[hidden]{display:block!important;visibility:hidden}
+.qz-bars{display:none}
+.qz-on .qz-bars{display:grid}
+.qz-done .qz-bars{display:none!important}
+.qz-done .qz-back{display:block!important;visibility:hidden}
+.qz-seg{position:relative;display:block}
+.qz-seg i{display:block;height:100%;width:0;transition:width .45s ease}
+.qz-stage.qz-in{animation:qzIn .4s cubic-bezier(.2,.7,.2,1) both}
+@keyframes qzIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.qz-step{display:none}
+.qz-opts{display:grid;gap:10px;margin-top:24px}
+.qz-opt{display:flex;align-items:center;gap:14px;width:100%;text-align:left;cursor:pointer;min-height:58px}
+.qz-opt b{display:block}
+.qz-opt small{display:block;margin-top:2px;opacity:.75;font-size:.85em}
+.qz-check{flex:none;width:22px;height:22px;position:relative}
+.qz-opt.is-sel .qz-check::after{content:"";position:absolute;left:6px;top:2px;width:6px;height:11px;border:solid currentColor;border-width:0 2px 2px 0;rotate:45deg}
+.qz-ico{flex:none;width:38px;height:38px;fill:none;stroke:currentColor;stroke-width:3;stroke-linejoin:round;stroke-linecap:round}
+.qz-sw{flex:none;width:38px;height:38px;border-radius:10px;box-shadow:inset 0 0 0 1px rgba(0,0,0,.1)}
+.qz-dots{flex:none;display:flex;align-items:center;justify-content:center;width:44px;height:44px}
+.qz-dots i{display:none}
+.qz-dots i.on{display:block;width:calc(var(--s) * 42px);height:calc(var(--s) * 42px);min-width:9px;min-height:9px;border-radius:50%;background:radial-gradient(circle,currentColor 34%,transparent 36%) 0 0/6px 6px}
+.qz-go[disabled]{opacity:.35;pointer-events:none}
+.qz-name input{width:100%;margin-top:22px;font-size:20px}
+.qz-skip{display:block;margin:14px auto 0;border:0;background:none;text-decoration:underline;cursor:pointer;opacity:.7;font-size:14px}
+.qz-sizes{display:flex;align-items:flex-end;justify-content:center;gap:clamp(10px,3vw,26px);margin:22px 0 0}
+.qz-sizes span{display:flex;flex-direction:column;align-items:center;gap:8px;font-size:10px;letter-spacing:.08em;text-transform:uppercase;opacity:.55}
+.qz-sizes span.on{opacity:1}
+.qz-sizes i{display:block;width:calc(var(--s) * 58px);height:calc(var(--s) * 58px);min-width:9px;min-height:9px;border-radius:50%;background:radial-gradient(circle,currentColor 34%,transparent 36%) 0 0/7px 7px}
+.qz-phase{text-align:center}
+.qz-ring{--p:0;width:150px;height:150px;margin:0 auto 22px;border-radius:50%;display:grid;place-items:center}
+.qz-ring b{display:grid;place-items:center;width:122px;height:122px;border-radius:50%}
+.qz-reveal{margin-top:16px;animation:qzIn .5s ease both}
+.qz-reveal p{max-width:500px;margin:16px auto 0}
+.qz-reveal blockquote{max-width:460px;margin:20px auto 0}
+.qz-reveal cite{display:block;margin-top:8px;font-style:normal}
+.qz-sw5,.r-sw{display:grid;grid-template-columns:repeat(5,1fr);overflow:hidden}
+.qz-sw5 i,.r-sw i{display:block;min-height:100%}
+.qz-sw5--mini{max-width:260px;height:54px;margin:4px auto 0;border-radius:10px}
+.qz-go{margin-top:18px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;text-decoration:none;cursor:pointer;border:0}
+.btn--block{display:flex;width:100%}
+.btn__arrow{font-style:normal;transition:transform .3s}
+.btn:hover .btn__arrow{transform:translateX(4px)}
+/* Precio */
+s[data-price-before]{text-decoration:none;padding:0 .12em;background:linear-gradient(to top right,transparent calc(50% - 1px),currentColor calc(50% - 1px),currentColor calc(50% + 1px),transparent calc(50% + 1px))}
+/* Video (lo arma assets/app.js) */
+.video{position:relative;aspect-ratio:9/16;width:min(280px,70vw);overflow:hidden;background:#111}
+.video iframe,.video video{position:absolute;inset:0;width:100%;height:100%;border:0}
+.video-ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:8px;color:#fff;text-align:center;padding:22px 18px 28px;background:#222 center/cover}
+.video-ph p{margin:0;font-size:19px}
+.video-ph--cover{border:0;cursor:pointer;width:100%}
+.video-ph__play{position:absolute;left:50%;top:44%;width:70px;height:70px;margin:-35px 0 0 -35px;border-radius:50%;background:rgba(255,255,255,.92)}
+.video-ph__play::after{content:"";position:absolute;left:28px;top:22px;border-left:20px solid #111;border-top:13px solid transparent;border-bottom:13px solid transparent}
+.zyx{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:8px 12px;font-size:13px}
+.zyx a{display:inline-flex;align-items:center;min-height:32px;padding:0 13px;border:1px solid currentColor;border-radius:999px;color:inherit;font-size:12px;font-weight:600;text-decoration:none}
+@media(prefers-reduced-motion:reduce){.qz-stage.qz-in,.qz-reveal{animation:none}}

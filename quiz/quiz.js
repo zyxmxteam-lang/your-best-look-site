@@ -4,6 +4,7 @@
    Prueba fucsia / naranja + contraste → estación de color. */
 (function () {
   var C = window.YBL || {};
+  var Q = window.QUIZ || {};   // cada versión del quiz cambia pasos, secciones y textos desde su página
 
   // ---------- Datos del método ----------
   var SIZES = ["Petit", "Chico", "Mediano", "Grande", "Extra grande"];
@@ -131,6 +132,34 @@
     ver: "Antes de decidir, mira la clase de Luzma: en 6 minutos te explica de qué se trata."
   };
 
+  if (Q.sections) SECTIONS = Q.sections;
+  if (Q.steps) STEPS = Q.steps(STEPS);
+  if (Q.lista) LISTA = Q.lista;
+  // Sin la pregunta de hombros, la opción "mezcla" ya no se afina con la siguiente
+  if (!STEPS.some(function (x) { return x.id === "hombros"; })) STEPS.forEach(function (x) { if (x.id === "lineas") x.o = x.o.map(function (o) { return o[1] === "m" ? ["Una mezcla, no estoy segura", "m", "Lo decide tu personalidad"] : o; }); });
+
+  // Textos que cada versión puede cambiar
+  var T = {
+    metasSub: function (n, edad, sub) { return (n ? "Mucho gusto, " + n + ". " : "") + (edad ? "Ajustamos tu resultado a tus " + edad + " años. " : "") + sub; },
+    rasgosSub: function (n) { return n + ", fíjate en el tamaño, no en si te gustan."; },
+    dolorSub: function (n) { return "Sé honesta, " + n + ": nadie más lo va a ver. Elige todas las que te suenen."; },
+    cont: "Continuar", skip: "Prefiero no decirlo", namePh: "Tu nombre",
+    rostroH: function (n) { return n ? n + ", tu tipo de rostro está definido" : "Tu tipo de rostro está definido"; },
+    rostroP: function (t, l) { return "Tipo <b>" + t + "</b> con líneas <b>" + l + "</b>. Ya tenemos la mitad de tu instructivo. Ahora, tus colores."; },
+    colorH: function (n) { return n ? n + ", tus colores están definidos" : "Tus colores están definidos"; },
+    colorP: "Cuando integras los colores de tu estación, la gente no sabrá qué te hiciste, pero te dirá: <b>¡Qué bien te ves!</b> Falta lo más importante: tu estilo.",
+    perfilH: function (n) { return "¡Listo" + (n ? ", " + n : "") + "! Tu rostro tiene personalidad"; },
+    quote: "«Nadie tiene nada que corregir y sí mucho que expresar.»",
+    verBtn: "Ver mi resultado",
+    eres: function (n) { return (n ? n + ", tu" : "Tu") + " rostro tiene la personalidad de"; },
+    offerH: function (n) { return (n ? n + ", esto" : "Esto") + " es tu primera lectura. "; },
+    tag: function (t, l, e) { return "Tipo de rostro: <b>" + t + "</b> · Líneas: <b>" + l + "</b> · Estación: <b>" + e + "</b>"; },
+    algo: "Esa sensación de que «algo no cuadra» tiene explicación: tu ropa no está hablando el idioma de tu rostro. ",
+    btn: function (st) { return "Quiero aprender a vestir como " + st; },
+    share: function (st, e, url) { return "Descubrí que mi rostro tiene personalidad de " + st + " y soy " + e + ". Haz el quiz de Luzma, es gratis y dura 2 minutos: " + url; }
+  };
+  for (var tk in (Q.text || {})) T[tk] = Q.text[tk];
+
   // ---------- Estado y utilidades ----------
   var ans = {}, i = 0, hist = [], started = false, R = null;
   var $ = function (s, r) { return (r || document).querySelector(s); };
@@ -141,6 +170,7 @@
     window.fbq(custom ? "trackCustom" : "track", ev, data || {});
   }
   function low(n) { return n.replace("La ", "la "); }
+  function set(sel, v, html) { var el = $(sel); if (el) el[html ? "innerHTML" : "textContent"] = v; }
   function nm(after) { var n = ans.nombre && ans.nombre.v; return n ? n + (after || ", ") : ""; }
   function cap(t) { return t.charAt(0).toUpperCase() + t.slice(1); }
   function dotsHTML(on) {
@@ -183,9 +213,9 @@
     if (s.type === "single" || s.type === "multi") {
       var multi = s.type === "multi";
       var sub = s.sub;
-      if (s.id === "metas") sub = (ans.nombre ? "Mucho gusto, " + ans.nombre.v + ". " : "") + (ans.edad ? "Ajustamos tu resultado a tus " + ans.edad.label.replace(" o más", " y más") + " años. " : "") + s.sub;
-      if (s.id === "rasgos" && ans.nombre) sub = ans.nombre.v + ", fíjate en el tamaño, no en si te gustan.";
-      if (s.id === "dolor" && ans.nombre) sub = "Sé honesta, " + ans.nombre.v + ": nadie más lo va a ver. Elige todas las que te suenen.";
+      if (s.id === "metas") sub = T.metasSub(ans.nombre && ans.nombre.v, ans.edad && ans.edad.label.replace(" o más", " y más"), s.sub);
+      if (s.id === "rasgos" && ans.nombre) sub = T.rasgosSub(ans.nombre.v);
+      if (s.id === "dolor" && ans.nombre) sub = T.dolorSub(ans.nombre.v);
       h = '<div class="qz-card"><p class="qz-step">' + SECTIONS[s.sec] + "</p><h2>" + s.q + "</h2>" + (sub ? '<p class="qz-help">' + sub + "</p>" : "") +
         '<div class="qz-opts" role="' + (multi ? "group" : "radiogroup") + '">' + s.o.map(function (o, k) {
           var ico = s.dots ? dotsHTML(k) : s.lines ? lineIcon(o[1]) : s.swatch ? swatch(o[2]) : multi ? '<span class="qz-check" aria-hidden="true"></span>' : "";
@@ -193,12 +223,12 @@
           var sel = multi ? (ans[s.id] && ans[s.id].ks.indexOf(k) > -1) : (ans[s.id] && ans[s.id].k === k);
           return '<button type="button" role="' + (multi ? "checkbox" : "radio") + '" aria-checked="' + !!sel + '" class="qz-opt' + (sel ? " is-sel" : "") + '" data-k="' + k + '">' + ico + "<span><b>" + o[0] + "</b>" + small + "</span></button>";
         }).join("") + "</div>" +
-        (multi ? '<button class="btn btn--block qz-go" type="button"' + (ans[s.id] && ans[s.id].ks.length ? "" : " disabled") + '>Continuar <i class="btn__arrow">→</i></button>' : "") + "</div>";
+        (multi ? '<button class="btn btn--block qz-go" type="button"' + (ans[s.id] && ans[s.id].ks.length ? "" : " disabled") + '>' + T.cont + ' <i class="btn__arrow">→</i></button>' : "") + "</div>";
     } else if (s.type === "name") {
       var val = ans.nombre ? ans.nombre.v : "";
       h = '<div class="qz-card"><p class="qz-step">' + SECTIONS[s.sec] + "</p><h2>" + s.q + '</h2><p class="qz-help">' + s.sub + "</p>" +
-        '<form class="qz-name"><input id="qz-name" name="nombre" type="text" autocomplete="given-name" maxlength="30" placeholder="Tu nombre" value="' + val.replace(/"/g, "") + '">' +
-        '<button class="btn btn--block qz-go" type="submit">Continuar <i class="btn__arrow">→</i></button></form><button class="qz-skip qz-go" type="button">Prefiero no decirlo</button></div>';
+        '<form class="qz-name"><input id="qz-name" name="nombre" type="text" autocomplete="given-name" maxlength="30" placeholder="' + T.namePh + '" value="' + val.replace(/"/g, "") + '">' +
+        '<button class="btn btn--block qz-go" type="submit">' + T.cont + ' <i class="btn__arrow">→</i></button></form><button class="qz-skip qz-go" type="button">' + T.skip + '</button></div>';
     } else if (s.type === "info") {
       h = '<div class="qz-card qz-info"><p class="kicker">' + s.k + "</p><h2>" + s.t + "</h2>" +
         (s.sizes ? '<div class="qz-sizes" aria-hidden="true">' + sizesHTML(-1) + "</div>" : "") +
@@ -229,16 +259,16 @@
   function reveal(s) {
     var S = STYLES[R.id], E = SEASONS[R.est], box = $(".qz-reveal", stage), h2 = $("h2", stage), h;
     if (s.done === "rostro") {
-      h2.textContent = nm() ? nm() + "tu tipo de rostro está definido" : "Tu tipo de rostro está definido";
-      h = '<div class="qz-sizes qz-sizes--res">' + sizesHTML(R.tallaN - 1) + '</div><p>Tipo <b>' + R.talla + "</b> con líneas <b>" + R.linea + "</b>. Ya tenemos la mitad de tu instructivo. Ahora, tus colores.</p>";
+      h2.textContent = T.rostroH(ans.nombre && ans.nombre.v);
+      h = '<div class="qz-sizes qz-sizes--res">' + sizesHTML(R.tallaN - 1) + "</div><p>" + T.rostroP(R.talla, R.linea) + "</p>";
     } else if (s.done === "color") {
-      h2.textContent = nm() ? nm() + "tus colores están definidos" : "Tus colores están definidos";
-      h = '<div class="qz-sw5 qz-sw5--mini">' + E.sw.map(function (c) { return '<i style="background:' + c + '"></i>'; }).join("") + "</div><p>Cuando integras los colores de tu estación, la gente no sabrá qué te hiciste, pero te dirá: <b>¡Qué bien te ves!</b> Falta lo más importante: tu estilo.</p>";
+      h2.textContent = T.colorH(ans.nombre && ans.nombre.v);
+      h = '<div class="qz-sw5 qz-sw5--mini">' + E.sw.map(function (c) { return '<i style="background:' + c + '"></i>'; }).join("") + "</div><p>" + T.colorP + "</p>";
     } else {
-      h2.textContent = "¡Listo" + (ans.nombre ? ", " + ans.nombre.v : "") + "! Tu rostro tiene personalidad";
-      h = '<p class="qz-big">' + S.name + '</p><blockquote>«Nadie tiene nada que corregir y sí mucho que expresar.»<cite>Luzma</cite></blockquote>';
+      h2.textContent = T.perfilH(ans.nombre && ans.nombre.v);
+      h = '<p class="qz-big">' + S.name + "</p><blockquote>" + T.quote + "<cite>Luzma</cite></blockquote>";
     }
-    box.innerHTML = h + '<button class="btn qz-go" type="button">' + (s.done === "perfil" ? "Ver mi resultado" : "Continuar") + ' <i class="btn__arrow">→</i></button>';
+    box.innerHTML = h + '<button class="btn qz-go" type="button">' + (s.done === "perfil" ? T.verBtn : T.cont) + ' <i class="btn__arrow">→</i></button>';
     box.hidden = false;
   }
 
@@ -301,39 +331,42 @@
     var dolor = ans.dolor ? ans.dolor.vs[0] : "lleno";
     try { localStorage.setItem("ybl_quiz", JSON.stringify({ estilo: r.id, estacion: r.est, t: Date.now() })); } catch (e) {}
     track("Lead", { content_name: "Quiz YBL · " + S.name, content_category: "quiz", value: 0, currency: "USD" });
-    track("QuizResult", { estilo: r.id, estacion: r.est, tipo: r.talla, edad: ans.edad && ans.edad.v, dolor: dolor, lista: ans.lista && ans.lista.v }, true);
+    track("QuizResult", { quiz: Q.id || "1", estilo: r.id, estacion: r.est, tipo: r.talla, edad: ans.edad && ans.edad.v, dolor: dolor, lista: ans.lista && ans.lista.v }, true);
 
-    $("#r-style").textContent = S.name;
-    $("#r-eres").textContent = (ans.nombre ? ans.nombre.v + ", tu" : "Tu") + " rostro tiene la personalidad de";
-    $("#r-offer-h").firstChild.textContent = (ans.nombre ? ans.nombre.v + ", esto" : "Esto") + " es tu primera lectura. ";
-    var algo = ans.algo && ans.algo.v !== "nunca" ? "Esa sensación de que «algo no cuadra» tiene explicación: tu ropa no está hablando el idioma de tu rostro. " : "";
-    $("#r-algo").textContent = algo;
-    $("#r-q").textContent = S.q;
-    $("#r-tag").innerHTML = "Tipo de rostro: <b>" + r.talla + "</b> · Líneas: <b>" + r.linea + "</b> · Estación: <b>" + E.name + "</b>";
-    $("#r-desc").textContent = S.d + " " + S.care;
-    $("#r-card").style.setProperty("--c", S.c);
-    $("#r-size").innerHTML = sizesHTML(r.tallaN - 1);
-    $("#r-si").innerHTML = S.si.map(function (x) { return "<li>" + x + "</li>"; }).join("");
-    $("#r-no").innerHTML = S.no.map(function (x) { return "<li>" + x + "</li>"; }).join("");
-    $("#r-est").textContent = E.name;
-    $("#r-estk").textContent = E.k;
-    $("#r-estd").textContent = E.d + " Tu metal: " + E.metal + ".";
-    $("#r-sw").innerHTML = E.sw.map(function (c) { return '<i style="background:' + c + '"></i>'; }).join("");
-    $("#r-pain").textContent = PAINS[dolor];
-    $("#r-age").textContent = ans.edad ? EDADES[ans.edad.v] : "";
-    $("#r-meta").textContent = metas.length > 1 ? metas.slice(0, -1).join(", ") + " y " + metas[metas.length - 1] : metas[0];
-    $("#r-lista").textContent = LISTA[ans.lista ? ans.lista.v : "ya"];
+    var nom = ans.nombre && ans.nombre.v;
+    set("#r-style", S.name);
+    set("#r-eres", T.eres(nom));
+    set("#r-name", nom || "");
+    var oh = $("#r-offer-h"); if (oh) oh.firstChild.textContent = T.offerH(nom);
+    set("#r-algo", ans.algo && ans.algo.v !== "nunca" ? T.algo : "");
+    set("#r-folio", "N.º " + String(Date.now()).slice(-6));
+    set("#r-fecha", new Date().toLocaleDateString("es-MX", { day: "numeric", month: "long", year: "numeric" }));
+    set("#r-tipo", r.talla); set("#r-linea", r.linea); set("#r-metal", E.metal);
+    set("#r-q", S.q);
+    set("#r-tag", T.tag(r.talla, r.linea, E.name), true);
+    set("#r-desc", S.d + " " + S.care);
+    document.documentElement.style.setProperty("--c", S.c);
+    set("#r-size", sizesHTML(r.tallaN - 1), true);
+    set("#r-si", S.si.map(function (x) { return "<li>" + x + "</li>"; }).join(""), true);
+    set("#r-no", S.no.map(function (x) { return "<li>" + x + "</li>"; }).join(""), true);
+    set("#r-est", E.name);
+    set("#r-estk", E.k);
+    set("#r-estd", E.d + " Tu metal: " + E.metal + ".");
+    document.querySelectorAll("#r-sw,.r-sw").forEach(function (el) { el.innerHTML = E.sw.map(function (c) { return '<i style="background:' + c + '"></i>'; }).join(""); });
+    set("#r-pain", PAINS[dolor]);
+    set("#r-age", ans.edad ? EDADES[ans.edad.v] : "");
+    set("#r-meta", metas.length > 1 ? metas.slice(0, -1).join(", ") + " y " + metas[metas.length - 1] : metas[0]);
+    set("#r-lista", LISTA[ans.lista ? ans.lista.v : "ya"]);
     var sg = $("#r-second");
-    if (r.segundo) { sg.hidden = false; $("b", sg).textContent = low(STYLES[r.segundo].name); }
+    if (sg && r.segundo) { sg.hidden = false; $("b", sg).textContent = low(STYLES[r.segundo].name); }
 
     // Botones a Hotmart: se conservan los UTM de la visita y se marca el estilo como origen (sck)
     var qs = window.location.search.replace(/^\?/, "");
     var url = (C.HOTMART_URL || "#") + "?" + (qs ? qs + "&" : "") + "sck=quiz_" + r.id;
     document.querySelectorAll("[data-checkout]").forEach(function (a) { a.setAttribute("href", url); });
-    $("#r-btn").textContent = "Quiero aprender a vestir como " + low(S.name);
-
-    var share = "Descubrí que mi rostro tiene personalidad de " + low(S.name) + " y soy " + E.name + ". Haz el quiz de Luzma, es gratis y dura 2 minutos: " + location.origin + location.pathname;
-    $("#r-share").setAttribute("href", "https://wa.me/?text=" + encodeURIComponent(share));
+    document.querySelectorAll(".r-btn,#r-btn").forEach(function (el) { el.textContent = T.btn(low(S.name)); });
+    var sh = $("#r-share");
+    if (sh) sh.setAttribute("href", "https://wa.me/?text=" + encodeURIComponent(T.share(low(S.name), E.name, location.origin + location.pathname)));
 
     app.hidden = true;
     $("#resultado").hidden = false;
@@ -342,6 +375,7 @@
   }
 
   // ---------- Inicio ----------
+  if (Q.onReady) Q.onReady();
   bars.innerHTML = SECTIONS.map(function (n) { return '<span class="qz-seg"><i></i><em>' + n + "</em></span>"; }).join("");
   document.querySelectorAll("[data-start]").forEach(function (b) {
     b.addEventListener("click", function () {
@@ -352,10 +386,10 @@
       render();
     });
   });
-  $("#r-again").addEventListener("click", function () {
+  if ($("#r-again")) $("#r-again").addEventListener("click", function () {
     ans = {}; i = 0; hist = []; R = null;
     $("#resultado").hidden = true; document.body.classList.remove("qz-done");
-    $("#r-second").hidden = true;
+    if ($("#r-second")) $("#r-second").hidden = true;
     app.hidden = false; render();
   });
 })();
