@@ -93,12 +93,12 @@
     { id: "hombros", type: "single", sec: 0, lines: true, q: "Y tus hombros, vistos de frente, son…",
       o: [["Rectos y marcados", "r"], ["Redondeados y suaves", "c"], ["No sé", "m"]] },
     { id: "fase1", type: "phase", from: 0, to: 40, label: "Leyendo la personalidad de tu rostro…", done: "rostro" },
-    { id: "temp", type: "single", sec: 1, swatch: true, q: "La prueba de Luzma: pon algo fucsia y algo naranja junto a tu cara, sin maquillaje. ¿Con cuál te ves con más luz?",
+    { id: "temp", type: "single", sec: 1, swatch: true, q: "La prueba de Your Best Look: pon algo fucsia y algo naranja junto a tu cara, sin maquillaje. ¿Con cuál te ves con más luz?",
       sub: "Si no tienes nada a la mano, elige el metal que mejor te queda.",
       o: [["Con el fucsia", "f", "fucsia"], ["Con el naranja", "w", "naranja"], ["No lo tengo a la mano: me ilumina más la plata", "f", "plata"], ["No lo tengo a la mano: me ilumina más el oro", "w", "oro"]] },
     { id: "contraste", type: "single", sec: 1, q: "Tu colorido natural (piel, ojos y cabello de nacimiento, no el del tinte) es…",
       o: [["De alto contraste", "i", "Cabello oscuro, ojos intensos o mucha diferencia con tu piel"], ["Suave", "s", "Tonos claros o medios que se funden entre sí"]] },
-    { id: "fase2", type: "phase", from: 40, to: 75, label: "Buscando tu estación de color…", done: "color" },
+    { id: "fase2", type: "phase", from: 40, to: 75, label: "Buscando el colorido de tu estación…", done: "color" },
     { id: "dolor", type: "multi", sec: 2, q: "¿Qué te pasa frente al clóset?", sub: "Elige todas las que te suenen.",
       o: [["Tengo el clóset lleno y la sensación de «no tengo qué ponerme».", "lleno"], ["Me pruebo varias cosas y termino con lo de siempre.", "siempre"],
         ["Lo que se ve increíble en otras, en mí no luce igual.", "copia"], ["Hay colores que me apagan o me hacen ver cansada.", "color"],
@@ -129,7 +129,7 @@
   var LISTA = {
     ya: "Estás lista. Lo único que te falta es el método para confirmarlo frente a tu espejo.",
     miedo: "Es normal tener miedo de equivocarte otra vez. Por eso tienes 7 días de garantía: si sientes que no es para ti, pides tu reembolso completo.",
-    ver: "Antes de decidir, mira la clase de Luzma: en 6 minutos te explica de qué se trata."
+    ver: "Antes de decidir, mira la clase de Your Best Look: en 6 minutos te explica de qué se trata."
   };
 
   if (Q.sections) SECTIONS = Q.sections;
@@ -156,7 +156,7 @@
     tag: function (t, l, e) { return "Tipo de rostro: <b>" + t + "</b> · Líneas: <b>" + l + "</b> · Estación: <b>" + e + "</b>"; },
     algo: "Esa sensación de que «algo no cuadra» tiene explicación: tu ropa no está hablando el idioma de tu rostro. ",
     btn: function (st) { return "Quiero aprender a vestir como " + st; },
-    share: function (st, e, url) { return "Descubrí que mi rostro tiene personalidad de " + st + " y soy " + e + ". Haz el quiz de Luzma, es gratis y dura 2 minutos: " + url; }
+    share: function (st, e, url) { return "Descubrí que mi rostro tiene personalidad de " + st + " y soy " + e + ". Haz el quiz de Your Best Look, es gratis y dura 2 minutos: " + url; }
   };
   for (var tk in (Q.text || {})) T[tk] = Q.text[tk];
 
@@ -331,6 +331,8 @@
     var dolor = ans.dolor ? ans.dolor.vs[0] : "lleno";
     try { localStorage.setItem("ybl_quiz", JSON.stringify({ estilo: r.id, estacion: r.est, t: Date.now() })); } catch (e) {}
     track("Lead", { content_name: "Quiz YBL · " + S.name, content_category: "quiz", value: 0, currency: "USD" });
+    var price = parseFloat(String(C.PRICE || "").replace(/[^\d.]/g, "")) || 0;
+    track("ViewContent", { content_name: "Your Best Look", content_category: "quiz", content_ids: ["YBL"], content_type: "product", value: price, currency: "USD", quiz: Q.id || "1", estilo: r.id });
     track("QuizResult", { quiz: Q.id || "1", estilo: r.id, estacion: r.est, tipo: r.talla, edad: ans.edad && ans.edad.v, dolor: dolor, lista: ans.lista && ans.lista.v }, true);
 
     var nom = ans.nombre && ans.nombre.v;
@@ -362,7 +364,7 @@
 
     // Botones a Hotmart: se conservan los UTM de la visita y se marca el estilo como origen (sck)
     var qs = window.location.search.replace(/^\?/, "");
-    var url = (C.HOTMART_URL || "#") + "?" + (qs ? qs + "&" : "") + "sck=quiz_" + r.id;
+    var url = (C.HOTMART_URL || "#") + "?" + (qs ? qs + "&" : "") + "sck=quiz" + String(Q.id || "1").split("-")[0] + "_" + r.id;
     document.querySelectorAll("[data-checkout]").forEach(function (a) { a.setAttribute("href", url); });
     document.querySelectorAll(".r-btn,#r-btn").forEach(function (el) { el.textContent = T.btn(low(S.name)); });
     var sh = $("#r-share");

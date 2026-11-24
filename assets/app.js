@@ -2,14 +2,16 @@
   var C = window.YBL || {};
 
   // ---------- Meta Pixel (el código base está en el <head>) ----------
-  var page = document.body.hasAttribute("data-gated") ? "clase" : "ventas";
+  var isQuiz = /^\/quiz(\/|$)/.test(window.location.pathname);
+  var page = isQuiz ? "quiz" : document.body.hasAttribute("data-gated") ? "clase" : "ventas";
   var value = parseFloat(String(C.PRICE || "").replace(/[^\d.]/g, "")) || 0;
-  var product = { content_name: "Your Best Look", content_category: page, value: value, currency: "USD" };
+  var product = { content_name: "Your Best Look", content_category: page, content_ids: ["YBL"], content_type: "product", value: value, currency: "USD" };
   function track(ev, data, custom) {
     if (typeof window.fbq !== "function") return;
     window.fbq(custom ? "trackCustom" : "track", ev, data || {});
   }
-  track("ViewContent", product);
+  // En los quizzes, ViewContent sale cuando aparece la oferta (lo manda quiz.js).
+  if (!isQuiz) track("ViewContent", product);
   document.addEventListener("click", function (e) {
     var a = e.target.closest && e.target.closest("[data-checkout]");
     if (a) track("InitiateCheckout", product);
