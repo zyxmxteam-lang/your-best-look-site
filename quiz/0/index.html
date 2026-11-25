@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Descubre el estilo exacto que favorece tu rostro · Your Best Look by Luzma</title>
+<meta name="description" content="Responde el quiz y descubre el estilo que te favorece según tu tipo de rostro, con el método definitivo de Your Best Look by Luzma.">
+<meta name="theme-color" content="#0d080d">
+<meta name="robots" content="noindex">
+<link rel="icon" href="favicon.png">
+<link rel="preload" href="assets/fonts/satoshi-900.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/satoshi-500.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/gambetta-500i.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/v/br25.jpg" as="image">
+<link rel="stylesheet" href="styles.css?v=5">
+</head>
+<body class="is-landing">
+
+<header class="top">
+  <button class="top__back" id="back" type="button" aria-label="Atrás" hidden>
+    <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+  <a class="brand" href="./" aria-label="Your Best Look by Luzma"><img src="assets/w/logo.webp" alt="Your Best Look by Luzma" width="44" height="44"></a>
+  <div class="top__right"><span class="top__step" id="stepcount"></span></div>
+  <div class="bars" id="bars" aria-hidden="true"></div>
+  <p class="top__sec" id="secname" aria-live="polite"></p>
+</header>
+
+<!-- ======================= LANDING ======================= -->
+<section id="landing">
+  <div class="hero">
+    <div class="wall" data-wall aria-hidden="true"></div>
+    <div class="hero__in">
+      <p class="eyebrow reveal" style="--d:0"><span class="dot"></span>Responde el quiz y descubre el estilo que te favorece según tu tipo de rostro</p>
+      <h1 class="h h--xl h--hero reveal" style="--d:1">Descubre el estilo exacto que <span class="sf">favorece</span> tu rostro <span class="pk">y proyecta tu mejor versión.</span></h1>
+      <div class="kinetic reveal" style="--d:2" aria-hidden="true">
+        <span class="chunk" id="kw">TU <b>ROSTRO</b></span>
+        <span class="kinetic__s" id="ks">ya sabe qué ponerte</span>
+      </div>
+      <p class="hero__p reveal" style="--d:3">Descubre cuál de los <b>7 estilos</b> de Your Best Look le corresponde a tus facciones y el colorido de tu <b>estación</b>, con el método definitivo de <b>Your Best Look by Luzma</b>.</p>
+      <button class="btn btn--xl reveal" style="--d:4" type="button" data-start><span class="btn__t">Iniciar quiz</span><span class="btn__a">→</span></button>
+      <div class="trust reveal" style="--d:5">
+        <div class="trust__row">
+          <div class="avatars"><img src="assets/w/rv1.webp" alt=""><img src="assets/c/w4.webp" alt=""><img src="assets/w/rv5.webp" alt=""><img src="assets/c/w12.webp" alt=""><img src="assets/w/rv2.webp" alt=""></div>
+          <span class="stars">★★★★★ <b data-proof-rating>4.9</b></span>
+        </div>
+        <p><b data-proof-women>12,480</b> mujeres ya lucen su mejor versión gracias a la metodología Your Best Look</p>
+      </div>
+      <div class="hero__media reveal" style="--d:6">
+        <figure class="mcard">
+          <video src="assets/v/br25.mp4" poster="assets/v/br25.jpg" autoplay muted loop playsinline preload="auto"></video>
+          <span class="mcard__c tl"></span><span class="mcard__c tr"></span><span class="mcard__c bl"></span><span class="mcard__c br"></span>
+          <figcaption class="mcard__tag"><i></i> Misma mujer · su mejor versión</figcaption>
+        </figure>
+      </div>
+      <ul class="chips reveal" style="--d:7" aria-label="Los 7 estilos">
+        <li>Dulce</li><li>Fresca</li><li>Original</li><li>Elegante</li><li>Femenina</li><li>Chic</li><li>Sofisticada</li>
+      </ul>
+    </div>
+  </div>
+
+  <section class="sec">
+    <p class="kicker">El secreto de las mujeres que mejor se ven</p>
+    <h2 class="h">Nadie empieza por la prenda. <span class="pk">Todas empiezan por su rostro.</span></h2>
+    <div class="steps3">
+      <article class="s3 ros">
+        <figure class="mcard"><video data-src="assets/v/br12.mp4" poster="assets/v/br12.jpg" muted loop playsinline preload="none"></video><span class="s3__n">01</span></figure>
+        <h3>Tus líneas y tu escala</h3>
+        <p>Rectas o curvas, de petit a extra grande. Deciden tus cuellos, tus aretes y el tamaño de tus estampados.</p>
+      </article>
+      <article class="s3 ros">
+        <figure class="mcard"><video data-src="assets/v/br57.mp4" poster="assets/v/br57.jpg" muted loop playsinline preload="none"></video><span class="s3__n">02</span></figure>
+        <h3>Los colores que te iluminan</h3>
+        <p>La prueba fucsia y naranja de Luzma, tus ojos y tu contraste natural revelan tu estación.</p>
+      </article>
+      <article class="s3 ros">
+        <figure class="mcard"><video data-src="assets/v/br50.mp4" poster="assets/v/br50.jpg" muted loop playsinline preload="none"></video><span class="s3__n">03</span></figure>
+        <h3>Tu estilo, uno de 7</h3>
+        <p>La dulce, la fresca, la original, la elegante, la femenina, la chic o la sofisticada. ¿Cuál eres tú?</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="sec sec--wide">
+    <p class="kicker">Misma mujer · misma cara</p>
+    <h2 class="h">Tu rostro <span class="sf">protagonista.</span></h2>
+    <div class="marquee" style="--dur:46s"><div class="marquee__track" data-ba></div></div>
+    <p class="fine">Imágenes ilustrativas del método.</p>
+  </section>
+
+  <section class="sec">
+    <div class="luzma ros">
+      <div class="luzma__media">
+        <img src="assets/w/luzma.webp" alt="Luzma, diseñadora de imagen" loading="lazy">
+        <p class="luzma__badge">Luzma<span>Diseñadora de imagen · Milán · Nueva York</span></p>
+      </div>
+      <div>
+        <p class="kicker">La metodología definitiva</p>
+        <h2 class="h">Your Best Look <span class="sf">de Luzma</span></h2>
+        <p class="sub">Diseñadora de imagen con más de 30 años de experiencia, formada en Milán y Nueva York con los más grandes de la industria de la moda, te revela su método para lucir tu mejor versión a través de aprender a vestir tu tipo de rostro.</p>
+        <ul class="ticks">
+          <li>Funciona igual en fast fashion que en boutique de lujo</li>
+          <li>Se aprende una vez y es tuyo para siempre</li>
+          <li>Frente a tu propio espejo, desde tu casa</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sec--wide">
+    <div class="rating">
+      <p class="rating__num" data-proof-rating>4.9</p>
+      <p class="stars" style="font-size:22px">★★★★★</p>
+      <p class="rating__sub"><b data-proof-women>12,480</b> mujeres ya descubrieron el estilo que les corresponde</p>
+    </div>
+    <div class="tms" data-tms></div>
+  </section>
+
+  <section class="sec sec--cta">
+    <h2 class="h">Tu rostro siempre tuvo un estilo. <span class="pk">Hoy lo descubres.</span></h2>
+    <button class="btn btn--xl" type="button" data-start><span class="btn__t">Iniciar quiz</span><span class="btn__a">→</span></button>
+    <p class="fine">2 minutos · Sin registro · Ten un espejo cerca</p>
+  </section>
+
+  <footer class="foot">
+    <p class="foot__method"><b>La metodología definitiva Your Best Look de Luzma.</b> Diseñadora de imagen con más de 30 años de experiencia, formada en Milán y Nueva York con los más grandes de la industria de la moda. Te revela su método para lucir tu mejor versión a través de aprender a vestir tu tipo de rostro.</p>
+    <div data-legal></div>
+  </footer>
+</section>
+
+<!-- ======================= QUIZ ======================= -->
+<main id="quiz" hidden>
+  <div class="ambient" aria-hidden="true"><span></span><span></span></div>
+  <div id="stage" class="stage"></div>
+</main>
+
+<!-- ======================= RESULTADO ======================= -->
+<section id="result" hidden></section>
+
+<div class="sticky" id="sticky" hidden>
+  <div class="sticky__in">
+    <div><p class="sticky__k">Tu acceso hoy</p><p class="sticky__p"><s data-price-before>$691</s> <span data-price>$80 USD</span></p></div>
+    <a class="btn btn--sm" data-checkout href="#"><span class="btn__t">Quiero entrar</span><span class="btn__a">→</span></a>
+  </div>
+</div>
+
+<div class="debug" id="debug" hidden></div>
+
+<script src="config.js?v=6"></script>
+<script src="app.js?v=6"></script>
+</body>
+</html>
