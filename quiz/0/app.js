@@ -687,19 +687,22 @@
 
   function setupPlayer(VV) {
     var box = $("#player"); if (!box) return;
+    // Al terminar, se quita el reproductor de Vimeo (sin perfil ni videos sugeridos) y vuelve la portada con el play.
+    var posterHTML = box.__poster || (box.__poster = box.innerHTML);
+    var backToPoster = function () { box.innerHTML = posterHTML; setupPlayer(VV); };
     $(".player__poster", box).addEventListener("click", function () {
       track("VSLPlay", {}, true);
       if (!VV.url) { box.innerHTML = '<p style="position:absolute;inset:0;display:grid;place-items:center;color:var(--mut)">Video próximamente</p>'; return; }
       if (/\.(mp4|m3u8)(\?|$)/.test(VV.url)) {
         box.innerHTML = '<video src="' + VV.url + '" controls autoplay playsinline></video>';
-        var v = $("video", box); v.addEventListener("timeupdate", function () { if (v.currentTime >= VV.reveal) showSticky(); });
+        var v = $("video", box); v.addEventListener("timeupdate", function () { if (v.currentTime >= VV.reveal) showSticky(); }); v.addEventListener("ended", backToPoster);
         return;
       }
       box.innerHTML = '<iframe src="' + VV.url + (VV.url.indexOf("?") > -1 ? "&" : "?") + 'autoplay=1" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Your Best Look · Luzma"></iframe>';
       if (/vimeo/.test(VV.url)) {
         var sc = document.createElement("script"); sc.src = "https://player.vimeo.com/api/player.js";
-        sc.onload = function () { try { var p = new window.Vimeo.Player($("iframe", box)); p.on("timeupdate", function (d) { if (d.seconds >= VV.reveal) showSticky(); }); } catch (e) {} };
-        document.head.appendChild(sc);
+        sc.onload = function () { try { var p = new window.Vimeo.Player($("iframe", box)); p.on("timeupdate", function (d) { if (d.seconds >= VV.reveal) showSticky(); if (d.duration && d.seconds >= d.duration - 0.4) backToPoster(); }); p.on("ended", backToPoster); } catch (e) {} };
+        if (window.Vimeo && window.Vimeo.Player) sc.onload(); else document.head.appendChild(sc);
       } else later(showSticky, VV.reveal * 1000);
     });
   }
