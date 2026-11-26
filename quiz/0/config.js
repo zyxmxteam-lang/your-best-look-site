@@ -18,11 +18,26 @@ window.YBL = {
   // Si una intro no tiene URL todavía, usa el de la general.
   // reveal = segundo en que aparece la barra fija de compra.
   VSL: {
-    "1":  { url: "https://player.vimeo.com/video/1245707054?badge=0&autopause=0&title=0&byline=0&portrait=0&dnt=1", reveal: 350 },
-    "1A": { url: "", reveal: 342 },
-    "1B": { url: "", reveal: 340 },
-    "1C": { url: "", reveal: 341 },
-    "1D": { url: "", reveal: 338 }
+    "1":  { // VSL_01_IntroGeneral_EDITED.mp4
+      url: "https://player.vimeo.com/video/1250197648?badge=0&autopause=0&title=0&byline=0&portrait=0&dnt=1",
+      reveal: 413
+    },
+    "1A": { // VSL_02_Intro1A_ClosetLleno_EDITED.mp4
+      url: "https://player.vimeo.com/video/1250197647?badge=0&autopause=0&title=0&byline=0&portrait=0&dnt=1",
+      reveal: 409
+    },
+    "1B": { // VSL_03_Intro1B_CopioLooks_EDITED.mp4
+      url: "https://player.vimeo.com/video/1250197650?badge=0&autopause=0&title=0&byline=0&portrait=0&dnt=1",
+      reveal: 405
+    },
+    "1C": { // VSL_04_Intro1C_GastoMucho_EDITED.mp4
+      url: "https://player.vimeo.com/video/1250197649?badge=0&autopause=0&title=0&byline=0&portrait=0&dnt=1",
+      reveal: 408
+    },
+    "1D": { // VSL_05_Intro1D_NoMeReconozco_EDITED.mp4
+      url: "https://player.vimeo.com/video/1250197995?badge=0&autopause=0&title=0&byline=0&portrait=0&dnt=1",
+      reveal: 404
+    }
   },
   VSL_POSTER: "assets/w/luzma.webp",
 
